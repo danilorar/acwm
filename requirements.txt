@@ -3,3 +3,5 @@ Pillow
 torch
 matplotlib
 huggingface_hub
+pandas
+zstandard

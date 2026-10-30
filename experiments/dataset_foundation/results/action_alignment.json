@@ -1,0 +1,8 @@
+{
+  "action_offsets": {
+    "bench2drive": 1,
+    "person2drive": 0
+  },
+  "selection_rule": "Mean validation full-horizon RMSE across two seeds; test never selects offsets",
+  "uncertainty": "Predictive choice only; actual collection-time control timing remains unverified"
+}

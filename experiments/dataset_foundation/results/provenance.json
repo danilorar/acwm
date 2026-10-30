@@ -1,0 +1,20 @@
+{
+  "src/unified_driving_dataset.py": "2b1786d0e60ff2d44922e302ebb8739910eebb9c74b9aecc90c6cb8bb21d6ff2",
+  "src/numeric_metadata.py": "08f044562175ffd0479dd8d2912edbba14c57a1e736658d7d8a61ad737351894",
+  "experiments/dynamics_validation/run.py": "e8e304f992e5e76280510b8027b78e5b38f20b43e2bbf9c4ff4888d817a7502b",
+  "experiments/dataset_foundation/run.py": "e2a563946cad31c895deb7227cbdd38577aaa43ba19d683046bbe22a087e58ed",
+  "experiments/dataset_foundation/inventory.py": "024446ccdd5f73ef91966c42f6751d97c23ace441bde7bb5f6df610d467d3d19",
+  "experiments/dataset_foundation/source_checks.py": "c21c968a0e6fa2b9da4c1fe57ea9ee8d9df9567d7c08e0e161ca6abcb2b5eb9e",
+  "experiments/dataset_foundation/make_report.py": "da41fb4fb57cf19610394a7f8d69156152a06505c8afb4cf682adb1a4240a871",
+  "experiments/dataset_foundation/summarize.py": "85275fc1259d4aaf68af44d0a7ccccdc4ac7414d3b8ae9fecd0ad6313feb6f0c",
+  "experiments/dataset_foundation/prepare_splits.py": "65a3070739f3bd475c9c2eaf954685445a01e4ff98d1cd18a96cb8b0cbac2578",
+  "experiments/dataset_foundation/candidate_checks.py": "b763fc211f121313cb268541029f294f69d679d5cc71eea46f8b3708b33f7234",
+  "experiments/dataset_foundation/coverage.py": "7d554b26b4c8f2eb95afd44dc7e10f25479325ff1de4d32aacf9ce298f6e599f",
+  "experiments/dataset_foundation/dynamics.py": "da05c79e08f611b43733163e1afb6307f0500ce27f76c90918b41601745d5507",
+  "experiments/dataset_foundation/verify.py": "bd2b713dc6d61aa4a268ddf983ef4461d04c72b2265544fb00f0bc2ef73cfdc9",
+  "experiments/dataset_foundation/release_coverage.py": "9cbf9823b79ff0331772fa1be8f7fd01dc2ffc80c8ec4b391c950f36cf439c50",
+  "experiments/dataset_foundation/manifests/selection.json": "afa78d917811b716ce893ca47b775099cb1ebdd66efd31515466a96e989e61d1",
+  "experiments/dataset_foundation/manifests/full_release_inspection.json": "eb21eebddf14d33078d9b44e7740821017fef6b96e35ea0ae1767b54bae456de",
+  "experiments/dataset_foundation/manifests/catalog.json": "33ec3fae229da7876fa5b48530985d1118b56a10766ee5df4da7b4dd05414e5c",
+  "experiments/dataset_foundation/results/splits.json": "a9fdadbf3c21c02171c68babf4d73d90a933d6a486623324cd902f59c0c8a85c"
+}

@@ -1,0 +1,164 @@
+{
+  "data_fingerprint": "0bef779fd303307d343f6f73e635883cc62d0083178568cec20d41f66c7dbd3e",
+  "counts": {
+    "train": {
+      "bench2drive": {
+        "out_of_nominal_control_frames": 0,
+        "episodes": 88,
+        "matched_frames": 23418,
+        "frames_participating_in_windows": 23418,
+        "windows": 22274,
+        "gap_boundaries": 0
+      },
+      "person2drive": {
+        "out_of_nominal_control_frames": 43,
+        "episodes": 52,
+        "matched_frames": 79255,
+        "frames_participating_in_windows": 78957,
+        "windows": 73653,
+        "gap_boundaries": 392
+      }
+    },
+    "validation": {
+      "bench2drive": {
+        "out_of_nominal_control_frames": 0,
+        "episodes": 22,
+        "matched_frames": 7050,
+        "frames_participating_in_windows": 7050,
+        "windows": 6764,
+        "gap_boundaries": 0
+      },
+      "person2drive": {
+        "out_of_nominal_control_frames": 18,
+        "episodes": 14,
+        "matched_frames": 20404,
+        "frames_participating_in_windows": 20307,
+        "windows": 19046,
+        "gap_boundaries": 95
+      }
+    },
+    "test": {
+      "bench2drive": {
+        "out_of_nominal_control_frames": 0,
+        "episodes": 22,
+        "matched_frames": 5042,
+        "frames_participating_in_windows": 5042,
+        "windows": 4756,
+        "gap_boundaries": 0
+      },
+      "person2drive": {
+        "out_of_nominal_control_frames": 0,
+        "episodes": 14,
+        "matched_frames": 18139,
+        "frames_participating_in_windows": 18095,
+        "windows": 16938,
+        "gap_boundaries": 88
+      }
+    }
+  },
+  "raw_speed_ranges": {
+    "train": {
+      "bench2drive": {
+        "minimum": -0.06123988330364227,
+        "maximum": 17.53691864013672,
+        "negative_frames": 1577,
+        "below_minus01_frames": 0
+      },
+      "person2drive": {
+        "minimum": 0.20043672621250153,
+        "maximum": 41.91943359375,
+        "negative_frames": 0,
+        "below_minus01_frames": 0
+      }
+    },
+    "validation": {
+      "bench2drive": {
+        "minimum": -0.05053095519542694,
+        "maximum": 11.576434135437012,
+        "negative_frames": 1329,
+        "below_minus01_frames": 0
+      },
+      "person2drive": {
+        "minimum": 0.20073029398918152,
+        "maximum": 36.33687210083008,
+        "negative_frames": 0,
+        "below_minus01_frames": 0
+      }
+    },
+    "test": {
+      "bench2drive": {
+        "minimum": -0.049208879470825195,
+        "maximum": 12.955312728881836,
+        "negative_frames": 248,
+        "below_minus01_frames": 0
+      },
+      "person2drive": {
+        "minimum": 0.2000991255044937,
+        "maximum": 44.46520233154297,
+        "negative_frames": 0,
+        "below_minus01_frames": 0
+      }
+    }
+  },
+  "jpeg_headers_verified": 153308,
+  "representative_full_decode_windows": 636,
+  "no_shared_frames": true,
+  "cross_split_identical_jpegs": 0,
+  "bench_route_disjoint": true,
+  "person_driver_disjoint": true,
+  "mixed_batch_shapes": {
+    "past_ego_observations": [
+      2,
+      4,
+      1
+    ],
+    "past_actions": [
+      2,
+      3,
+      3
+    ],
+    "future_actions": [
+      2,
+      10,
+      3
+    ],
+    "future_motion_targets": [
+      2,
+      10,
+      5
+    ],
+    "start_frame": [
+      2
+    ],
+    "frame_ids": [
+      2,
+      14
+    ],
+    "action_offset": [
+      2
+    ],
+    "action_in_nominal_range": [
+      2,
+      14
+    ],
+    "past_images": [
+      2,
+      4,
+      3,
+      224,
+      224
+    ],
+    "future_images": [
+      2,
+      10,
+      3,
+      224,
+      224
+    ]
+  },
+  "action_offsets": {
+    "bench2drive": 1,
+    "person2drive": 0
+  },
+  "limitation": "JPEG verify is structural; full decoding sampled at three windows per episode, not every image"
+}

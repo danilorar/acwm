@@ -1,0 +1,30 @@
+{
+  "bench2drive": {
+    "logical_bytes": 2286646114,
+    "allocated_bytes": 2434260992,
+    "files": 71030
+  },
+  "person_archives": {
+    "logical_bytes": 72771051179,
+    "allocated_bytes": 72771911680,
+    "files": 242
+  },
+  "person_metadata": {
+    "logical_bytes": 11132573173,
+    "allocated_bytes": 11133300736,
+    "files": 148
+  },
+  "person_front_rgb": {
+    "logical_bytes": 9755474178,
+    "allocated_bytes": 10108440576,
+    "files": 171726
+  },
+  "person_manifests": {
+    "logical_bytes": 24276268,
+    "allocated_bytes": 25018368,
+    "files": 281
+  },
+  "free_bytes": 291244916736,
+  "global_huggingface_cache_allocated_bytes": 2732032,
+  "note": "Per-tree storage includes retained source archives and all 50 metadata files. The global Hugging Face cache may include pre-existing unrelated files; it is not counted as dataset storage. Historical samples may share hardlinks with this tree."
+}

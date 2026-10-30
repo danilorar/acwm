@@ -1,0 +1,46 @@
+{
+  "TeleopWM": {
+    "downloaded_decoded_images": 19,
+    "image_sizes": {
+      "(960, 600)": 19
+    }
+  },
+  "PDD": {
+    "downloaded_decoded_images": 192,
+    "image_sizes": {
+      "(1024, 512)": 192
+    }
+  },
+  "Person2Drive": {
+    "archive_front_frames": 900,
+    "metadata_frames": 866,
+    "missing_image_references": [],
+    "decoded_front_frames": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "archive_has_anno": false,
+    "camera_views": [
+      "rgb_back",
+      "rgb_back_left",
+      "rgb_back_right",
+      "rgb_front",
+      "rgb_front_left",
+      "rgb_front_right"
+    ],
+    "metadata_first_frame": 2,
+    "raw_motion_records": 1844
+  }
+}

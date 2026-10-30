@@ -1,0 +1,4 @@
+source,episodes,frames,out_of_nominal_control_frames,moving_frames,coast_frames,partial_frames,partial_above5,simultaneous_pedal_frames,frames_above5,max_coast_frames,max_partial_frames,one_sec_coast_H0,one_sec_coast_H1,one_sec_partial_H0,one_sec_partial_H1,multi_transition_windows_H0,multi_longitudinal_regime_windows_H0,valid_one_sec_windows,coast_fraction_moving,partial_fraction_above5,images_verified
+bench2drive,132,35510,0,19003,522,0,0,132,15679,6,0,0,0,0,0,24183,19512,34190,0.027469346945219176,0.0,True
+person2drive,80,117798,61,98236,13630,3315,2287,207,71527,65,39,2744,2860,537,586,26120,5598,111441,0.13874750600594488,0.03197393991080291,True
+combined,212,153308,61,117239,14152,3315,2287,339,87206,65,39,2744,2860,537,586,50303,25110,145631,0.12071068501096052,0.026225259729835103,True

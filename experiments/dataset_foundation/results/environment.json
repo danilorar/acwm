@@ -1,0 +1,10 @@
+{
+  "numpy": "2.5.4",
+  "Pillow": "13.0.0",
+  "torch": "2.15.0+cpu",
+  "matplotlib": "3.11.2",
+  "huggingface_hub": "2.4.0",
+  "pandas": "3.1.0",
+  "zstandard": "0.25.0",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]"
+}

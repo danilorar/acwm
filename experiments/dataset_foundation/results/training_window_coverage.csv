@@ -1,0 +1,7 @@
+source,split,eligible_windows,coast_H0,partial_H0,partial_start_above5_H0,multiple_transitions_H0,coast_H1,partial_H1,partial_start_above5_H1,multiple_transitions_H1
+bench2drive,train,22274,0,0,0,15859,0,0,0,15910
+person2drive,train,73653,1965,328,316,17321,2042,366,353,17381
+bench2drive,validation,6764,0,0,0,4442,0,0,0,4454
+person2drive,validation,19046,381,62,60,2853,393,69,65,2868
+bench2drive,test,4756,0,0,0,3806,0,0,0,3821
+person2drive,test,16938,398,147,147,5602,425,151,151,5596

@@ -1,0 +1,84 @@
+{
+  "quality_policy": "Exclude all 14-frame windows touching out-of-nominal controls; raw labels preserved",
+  "data_fingerprint": "0bef779fd303307d343f6f73e635883cc62d0083178568cec20d41f66c7dbd3e",
+  "epochs": 60,
+  "seeds": [
+    0,
+    1
+  ],
+  "lr": 0.003,
+  "train_cap_per_source": 12000,
+  "device": "cpu",
+  "source_config": {
+    "bench2drive": {
+      "training_windows_available": 22274,
+      "training_windows_used": 11589,
+      "mean": [
+        4.983950138092041,
+        -0.02316339500248432,
+        0.48537391424179077,
+        0.19315066933631897
+      ],
+      "std": [
+        3.8351356983184814,
+        0.17353245615959167,
+        0.3898654282093048,
+        0.39527183771133423
+      ],
+      "training_speed_max": 17.53691864013672,
+      "training_abs_accel_995": 22.922805786132812,
+      "physics_H0": [
+        -0.31141116435914373,
+        3.656429402166752,
+        0.9073169685238932,
+        0.17980471863903394
+      ],
+      "physics_H1": [
+        -0.02628802206836518,
+        2.5580987329966436,
+        0.9703451812701013,
+        0.1285817556170239
+      ],
+      "validation_alignment_rmse": {
+        "0": 0.6300637722015381,
+        "1": 0.61314657330513
+      }
+    },
+    "person2drive": {
+      "training_windows_available": 73653,
+      "training_windows_used": 11960,
+      "mean": [
+        9.142759323120117,
+        0.007741488516330719,
+        0.4347510039806366,
+        0.009032581001520157
+      ],
+      "std": [
+        7.341362953186035,
+        0.07358007878065109,
+        0.2726328670978546,
+        0.0727168470621109
+      ],
+      "training_speed_max": 41.91943359375,
+      "training_abs_accel_995": 9.510869979858398,
+      "physics_H0": [
+        -2.6305287822714885,
+        7.866239007620053,
+        9.80098578296965,
+        0.05455250584296175
+      ],
+      "physics_H1": [
+        -2.4373783545607464,
+        7.241828533842356,
+        9.089479211911693,
+        0.04249421186972393
+      ],
+      "validation_alignment_rmse": {
+        "0": 0.35272225737571716,
+        "1": 0.357580304145813
+      }
+    }
+  },
+  "model_source": "experiments/dynamics_validation/run.py:Dynamics (unchanged)",
+  "evaluation_subsets": "Coast/partial require all 11 control labels to agree, so H0/H1 share exactly the same target subsets"
+}
