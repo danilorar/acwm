@@ -1,4 +1,4 @@
-"""Source-aware 10 Hz RGB/ego dataset; original Bench2Drive adapter is unchanged."""
+"""Source-aware 10 Hz RGB/ego training dataset for Bench2Drive and Person2Drive."""
 from pathlib import Path
 import json
 import gzip
@@ -19,7 +19,7 @@ def load_episode_records(project=PROJECT, *, require_images=True):
     camera calibration defines ego +y left; Bench2Drive's actor +y is right.
     """
     project=Path(project);records={}
-    bench=project/'data/bench2drive_train/extracted'
+    bench=project/'data/bench2drive/extracted'
     for folder in sorted(bench.iterdir()):
         paths=sorted((folder/'anno').glob('*.json.gz'))
         if not paths:continue
@@ -38,8 +38,8 @@ def load_episode_records(project=PROJECT, *, require_images=True):
             actions=np.array([[r[c] for c in ['steer','throttle','brake']] for r in rows],np.float32),
             world2body=np.array(matrices,np.float64),right_sign=1,
             image_paths=[folder/'camera/rgb_front'/f'{i:05}.jpg' for i in ids])
-    person=project/'data/person2drive_train'
-    selection=json.loads((person/'manifests/selection.json').read_text())
+    person=project/'data/person2drive'
+    selection=json.loads((project/'data/config/person_selection.json').read_text())
     for entry in selection['selected']:
         with np.load(project/entry['index'],allow_pickle=False) as data:
             arrays={k:data[k].copy() for k in data.files}
@@ -157,3 +157,14 @@ def numeric_record_fingerprint(records, splits):
 def nominal_controls(actions):
     """Nominal CARLA range, a conservative quality flag rather than an applied-control claim."""
     return np.isfinite(actions).all(axis=-1)&(np.abs(actions[...,0])<=1)&(actions[...,1:]>=0).all(axis=-1)&(actions[...,1:]<=1).all(axis=-1)
+
+
+def load_training_datasets(project=PROJECT, *, require_images=True, image_size=(224,224)):
+    """Load the frozen, quality-filtered train/validation/test views once."""
+    project=Path(project)
+    config=project/'data/config'
+    splits=json.loads((config/'splits.json').read_text())['episodes']
+    offsets=json.loads((config/'action_alignment.json').read_text())['action_offsets']
+    records=load_episode_records(project,require_images=require_images)
+    return {part:UnifiedDrivingDataset(records,episode_ids=keys,action_offsets=offsets,image_size=image_size)
+            for part,keys in splits.items()}

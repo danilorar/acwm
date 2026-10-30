@@ -1,7 +1,0 @@
-source,split,frames,one_sec_coast_H0,one_sec_coast_H1,one_sec_partial_H0,one_sec_partial_H1,multi_transition_windows_H0,multi_longitudinal_regime_windows_H0,simultaneous_pedal_frames
-bench2drive,test,5042,0,0,0,0,3815,3102,0
-bench2drive,train,23418,0,0,0,0,15914,12872,76
-bench2drive,validation,7050,0,0,0,0,4454,3538,56
-person2drive,test,18139,398,425,147,151,5677,972,0
-person2drive,train,79255,1965,2042,328,366,17534,4098,139
-person2drive,validation,20404,381,393,62,69,2909,528,68

@@ -87,7 +87,7 @@ def extract_one(archive, entry, base, state, *, all_rgb=False, reserve_bytes=20*
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--destination',type=Path,default=PROJECT/'data/bench2drive_train')
+    parser.add_argument('--destination',type=Path,default=PROJECT/'data/bench2drive')
     parser.add_argument('--only',nargs='+',help='Exact selected archive filenames')
     parser.add_argument('--all-rgb',action='store_true',help='Keep all RGB cameras, not only front')
     parser.add_argument('--reserve-gib',type=float,default=20.)

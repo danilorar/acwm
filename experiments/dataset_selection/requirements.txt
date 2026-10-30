@@ -1,6 +1,0 @@
-numpy
-pandas
-Pillow
-matplotlib
-huggingface_hub
-zstandard

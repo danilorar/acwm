@@ -1,7 +1,7 @@
 # Joint driving dataset contract
 
-`src/unified_driving_dataset.py` is a separate adapter. The original
-`Bench2DriveDataset` and historical experiments are unchanged.
+`src/unified_driving_dataset.py` is a separate adapter. It supports both sources; the superseded Bench-only adapter and historical
+experiments are preserved in tag dataset-foundation-v1.
 
 ```python
 import json
@@ -9,7 +9,7 @@ from pathlib import Path
 from torch.utils.data import DataLoader
 from src.unified_driving_dataset import load_episode_records, UnifiedDrivingDataset
 
-results = Path('experiments/dataset_foundation/results')
+results = Path('data/config')
 splits = json.loads((results / 'splits.json').read_text())['episodes']
 offsets = json.loads((results / 'action_alignment.json').read_text())['action_offsets']
 records = load_episode_records()  # verifies all indexed image paths
@@ -89,8 +89,8 @@ original human recording/rendering/metadata-export caller is also unavailable.
 Evaluation-agent execution order and predictive error cannot substitute for
 these missing collection-time callers. Ten Hz is the observation frequency;
 it does not establish that each recorded command was held for the entire next
-0.1-second transition. Candidate plans use a 10-Hz discretization assumption. See the diagnostic README and
-`results/source_checks.json`.
+0.1-second transition. Candidate plans use a 10-Hz discretization assumption. See docs/dataset_foundation.md and the archived
+experiments/dataset_foundation/results/source_checks.json at dataset-foundation-v1.
 
 ## Splits and normalization
 

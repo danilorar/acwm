@@ -1,52 +1,82 @@
 # Think Before Act
 
-Bench2Drive data preparation and diagnostics for an action-conditioned visual
-world model. The repository contains the dataset implementation, download and
-extraction tools, tests, diagnostic experiments and their recorded results.
-Visual-encoder and Transformer training have not been implemented.
+Action-conditioned visual world model. Dataset preparation and diagnostics are
+complete; visual feature extraction and world-model training have not started.
 
-## Setup
+```text
+data/                   # local datasets; only config/ is tracked
+  bench2drive/          # active Bench2Drive corpus
+  person2drive/         # active Person2Drive corpus
+  config/               # frozen splits, action hypotheses, source manifests
+  archive/              # ignored legacy data and backups; never used for training
+src/                    # unified dataset and restricted metadata reader
+tools/                  # dataset restoration and real-data smoke check
+tests/                  # focused adapter/extraction tests
+docs/                   # dataset contract and analysis summary
+```
+
+## Setup and use
 
 ```bash
-git clone --recurse-submodules https://github.com/danilorar/think_b4_act.git
-cd think_b4_act
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
 python -m pip install -r requirements.txt
-```
-
-The CPU PyTorch install is sufficient for dataset tests and diagnostics. Choose
-an appropriate GPU build separately when GPU training is introduced.
-
-Bench2Drive is pinned as an upstream submodule. An optional compatibility patch
-updates its old Mini-download CLI calls:
-
-```bash
-git -C external/Bench2Drive apply ../../patches/bench2drive-download-mini.patch
-```
-
-Raw datasets, archives, virtual environments and checkpoints are excluded from
-Git. Selection/catalog/split manifests and compact reports are included for
-reproducibility. Downloading data requires substantial storage; inspect the plan
-before starting transfers.
-
-- [Dataset interface and tests](docs/bench2drive_dataset.md)
-- [Training-data expansion and coverage](docs/bench2drive_expansion.md)
-- [Data audit](experiments/data_audit/README.md)
-- [One-step action alignment](experiments/action_alignment/README.md)
-- [Multi-step dynamics validation](experiments/dynamics_validation/README.md)
-
-The existing experiment reports preserve their historical assumptions; the
-refactored dataset interface is documented separately. Follow the data preparation
-instructions to restore the local datasets before running real-data integrations.
-
-```bash
 python -m unittest discover -s tests -v
-python test_dataset.py
+python tools/check_dataset.py
 ```
 
-Synthetic tests work without Mini; Mini integration tests skip when data is absent.
-The demo and recorded experiment reruns require the corresponding local data.
-Action timing remains a provisional hypothesis; limited coasting and binary brake
-coverage do not establish arbitrary-action MPC validity.
+```python
+from torch.utils.data import DataLoader
+from src.unified_driving_dataset import load_training_datasets
+
+datasets = load_training_datasets()
+loader = DataLoader(datasets['train'], batch_size=8, shuffle=True, num_workers=0)
+batch = next(iter(loader))
+```
+
+Both sources are needed. Train/validation/test select disjoint episodes in the
+same physical folders; a folder name does not define the split.
+See [the dataset contract](docs/unified_driving_dataset.md) and
+[the foundation summary](docs/dataset_foundation.md).
+
+## Restore missing data
+
+The following commands use frozen manifests, never choose a different cohort.
+They are unnecessary on this machine, where the dataset is already prepared.
+Downloading requires substantial disk space; archive transfers happen only with
+explicit download flags. Sensor archives contain extra modalities, but only
+annotations/front RGB (Bench) and front RGB (Person) are extracted.
+
+```bash
+python tools/download_bench2drive.py             # show frozen selection
+python tools/download_bench2drive.py --download
+python tools/extract_bench2drive.py
+python tools/prepare_person2drive.py --metadata --index
+python tools/prepare_person2drive.py --download --extract
+```
+
+## Archived investigation
+
+The complete analysis is retained in branch `archive/dataset-analysis` and tag
+`dataset-foundation-v1` (commit `17b4cf3`). The clean main branch does not depend
+on experimental scripts, the old Bench-only adapter, Mini, or the upstream
+Bench2Drive checkout. Therefore `.gitmodules` and the old patch/CSV-specific
+`.gitattributes` are unnecessary on main.
+
+Read a historical report without changing branches:
+
+```bash
+git show dataset-foundation-v1:experiments/dataset_foundation/REPORT.md
+```
+
+For old experiments, use a separate worktree and follow its historical setup:
+
+```bash
+git worktree add ../world_model-analysis archive/dataset-analysis
+```
+
+Ignored data are not stored in Git. The historical code expects the old names
+`data/bench2drive_train`, `data/person2drive_train`, and sometimes Mini; point
+those names in the analysis worktree to the corresponding current datasets.
+Historical Person manifests/index paths may also need the old-name symlink.
+Keep those aliases in the analysis worktree, not the clean main project.
