@@ -1,0 +1,10 @@
+{
+  "brake_values": [
+    0.0,
+    1.0
+  ],
+  "throttle_when_braking_max": 0.2564900815486908,
+  "max_brake_reconstruction_error": 0.0,
+  "max_throttle_reconstruction_error": 0.0,
+  "conclusion": "Signed encoding is empirically invertible on Mini; not generally invertible for arbitrary continuous controls."
+}

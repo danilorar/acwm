@@ -1,0 +1,157 @@
+{
+  "action_offset": 1,
+  "action_channels": [
+    "steer",
+    "throttle",
+    "brake"
+  ],
+  "history": 4,
+  "horizon": 10,
+  "recording_hz": 10,
+  "repository": "rethinklab/Bench2Drive-V0.0.4",
+  "revision": "d84ae18cf20a88b9220df1bc15c073d8824b7ac1",
+  "mini": {
+    "frames": 2295,
+    "moving_frames": 1527,
+    "coasting_frames": 20,
+    "coasting_runs": 11,
+    "sustained_coasting_runs_ge_10": 0,
+    "overlap_frames": 187,
+    "intermediate_brake_frames": 0,
+    "recordings": 10,
+    "max_coasting_frames": 3,
+    "coasting_fraction": 0.01309757694826457,
+    "brake_values": [
+      0.0,
+      1.0
+    ],
+    "intermediate_throttle_frames": 1074,
+    "overlap_fraction": 0.08148148148148149,
+    "intermediate_brake_fraction": 0.0,
+    "intermediate_throttle_fraction": 0.46797385620915033,
+    "max_coasting_sampled_seconds": 0.3,
+    "max_coasting_endpoint_span_seconds": 0.2
+  },
+  "expanded": {
+    "frames": 35510,
+    "moving_frames": 19003,
+    "coasting_frames": 522,
+    "coasting_runs": 383,
+    "sustained_coasting_runs_ge_10": 0,
+    "overlap_frames": 132,
+    "intermediate_brake_frames": 0,
+    "recordings": 132,
+    "max_coasting_frames": 6,
+    "coasting_fraction": 0.027469346945219176,
+    "brake_values": [
+      0.0,
+      1.0
+    ],
+    "intermediate_throttle_frames": 13637,
+    "overlap_fraction": 0.003717262742889327,
+    "intermediate_brake_fraction": 0.0,
+    "intermediate_throttle_fraction": 0.38403266685440723,
+    "max_coasting_sampled_seconds": 0.6,
+    "max_coasting_endpoint_span_seconds": 0.5
+  },
+  "extracted_archives": 132,
+  "selected_archives": 132,
+  "scenario_distribution": {
+    "AccidentTwoWays": 3,
+    "Accident": 3,
+    "BlockedIntersection": 3,
+    "ConstructionObstacleTwoWays": 3,
+    "ConstructionObstacle": 3,
+    "ControlLoss": 3,
+    "CrossingBicycleFlow": 3,
+    "DynamicObjectCrossing": 3,
+    "EnterActorFlow": 3,
+    "HardBreakRoute": 3,
+    "HazardAtSideLaneTwoWays": 3,
+    "HazardAtSideLane": 3,
+    "HighwayCutIn": 3,
+    "HighwayExit": 3,
+    "InterurbanActorFlow": 3,
+    "InterurbanAdvancedActorFlow": 3,
+    "InvadingTurn": 3,
+    "MergerIntoSlowTrafficV2": 3,
+    "MergerIntoSlowTraffic": 3,
+    "NonSignalizedJunctionLeftTurnEnterFlow": 3,
+    "NonSignalizedJunctionLeftTurn": 3,
+    "NonSignalizedJunctionRightTurn": 3,
+    "OppositeVehicleRunningRedLight": 3,
+    "OppositeVehicleTakingPriority": 3,
+    "ParkedObstacleTwoWays": 3,
+    "ParkedObstacle": 3,
+    "ParkingCrossingPedestrian": 3,
+    "ParkingCutIn": 3,
+    "ParkingExit": 3,
+    "PedestrianCrossing": 3,
+    "SequentialLaneChange": 3,
+    "SignalizedJunctionLeftTurnEnterFlow": 3,
+    "SignalizedJunctionLeftTurn": 3,
+    "SignalizedJunctionRightTurn": 3,
+    "StaticCutIn": 3,
+    "T_Junction": 3,
+    "VanillaNonSignalizedTurnEncounterStopsign": 3,
+    "VanillaNonSignalizedTurn": 3,
+    "VanillaSignalizedTurnEncounterGreenLight": 3,
+    "VanillaSignalizedTurnEncounterRedLight": 3,
+    "VehicleOpensDoorTwoWays": 3,
+    "VehicleTurningRoutePedestrian": 3,
+    "VehicleTurningRoute": 3,
+    "YieldToEmergencyVehicle": 3
+  },
+  "archives_bytes": 52879251175,
+  "extracted_bytes": 2278392649,
+  "training_windows": 22274,
+  "validation_windows": 11520,
+  "total_windows": 33794,
+  "loader_batch_shapes": {
+    "past_images": [
+      2,
+      4,
+      3,
+      18,
+      32
+    ],
+    "past_ego_observations": [
+      2,
+      4,
+      1
+    ],
+    "past_actions": [
+      2,
+      3,
+      3
+    ],
+    "future_actions": [
+      2,
+      10,
+      3
+    ],
+    "future_images": [
+      2,
+      10,
+      3,
+      18,
+      32
+    ],
+    "future_motion_targets": [
+      2,
+      10,
+      5
+    ],
+    "start_frame": [
+      2
+    ],
+    "frame_ids": [
+      2,
+      14
+    ],
+    "action_offset": [
+      2
+    ]
+  },
+  "interpretation": "Coverage must be assessed from measured coast/brake results; more clips alone do not establish counterfactual/MPC validity."
+}

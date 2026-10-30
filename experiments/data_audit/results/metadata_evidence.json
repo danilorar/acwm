@@ -1,0 +1,296 @@
+{
+  "local_docs": {
+    "README.md": [
+      {
+        "line": 39,
+        "text": "  - **Strictly uniform training data.** The new Think2Drive-collected training set (44 scenarios \u00d7 25 routes = 1,100 routes) is strictly uniform over scenarios, unlike the previous Base set whose scenario distribution is uneven."
+      },
+      {
+        "line": 41,
+        "text": "  - **Separate validation set** of 220 routes (44 scenarios \u00d7 5) for more reliable evaluation."
+      },
+      {
+        "line": 60,
+        "text": "- [2024/07/10] We further clean and add more clips in the Full set (13638 clips). Since HuggingFace only allows up to 10000 files per repo, we use two repos to store the Full set. As suggested in this issue [issue](https://github.com/Thinklab-SJTU/Bench2Drive/issues/17), we add a filelist and sha256 of clips for each set."
+      },
+      {
+        "line": 67,
+        "text": "- With the 0.0.4 update, we released a new Think2Drive-collected training set containing 44 scenarios \u00d7 25 routes (1,100 routes in total). The new training set is **strictly uniform over scenarios** \u2014 every scenario contributes exactly 25 routes \u2014 unlike the previous Base set whose scenario distribution is uneven. Due to the large size of the depth data, we split the dataset into two parts, both available below. The new features introduced in this update are summarized [here](docs/v004_update.md)."
+      },
+      {
+        "line": 75,
+        "text": "|       Full       | [Full HF Link - 9888 files](https://huggingface.co/datasets/rethinklab/Bench2Drive-Full)/[Sup HF Link - 3814 file](https://huggingface.co/datasets/rethinklab/Bench2Drive-Full-Sup) |                                      -                                      |      4T      | [Full/Sup Json File](./docs/bench2drive_full+sup_13638.json) |"
+      }
+    ],
+    "docs/v004_update.md": [
+      {
+        "line": 3,
+        "text": "1. We released a new evaluation set with 220 routes (44 scenarios * 5) in it. The xml file is at `leaderboard/data/bench2drive_0.0.4_val.xml`"
+      },
+      {
+        "line": 21,
+        "text": "1. We released a new training set collected by Think2Drive, containing 44 scenarios * 25 routes = 1100 routes. Please visit https://huggingface.co/datasets/rethinklab/Bench2Drive-V0.0.4 for more details. In the new dataset:"
+      }
+    ],
+    "docs/anno.md": [
+      {
+        "line": 5,
+        "text": "- Most of recorded data is **directly from CARLA API** to avoid information loss. The data collection code is in [tools/data_collect.py](../tools/data_collect.py). We suggest reading it aided by [CARLA official Python API docs](https://carla.readthedocs.io/en/latest/python_api/)."
+      },
+      {
+        "line": 6,
+        "text": "- Keep in mind that the recorded data might be **in different coordinate systems** (World, Ego, LiDAR, Compass). We provide a [visualization code](../tools/visualize.py) for you to get familiar with these coordinate systems. You might refer to [this explanations](https://github.com/autonomousvision/carla_garage/blob/main/docs/coordinate_systems.md) (awsome codebase!)."
+      },
+      {
+        "line": 8,
+        "text": "- Note that sometimes **CARLA API could be buggy**, we record some known issues below:"
+      },
+      {
+        "line": 13,
+        "text": "  - Static vehicles' (state==\"static\") rotation and location is wrong due to CARLA API bugs. Thus, we suggest only use attribute **center** and **extent** to obtain the local 3D bounding boxes. Use the inverse of **world2vehicle** to obtain the vehicle's bounding box in the world coordinate system. "
+      },
+      {
+        "line": 118,
+        "text": "**TODO: For all items, tell which sensors/CARLA API it is from and which lines of code in the sensor agent!!! Especially for those from sensors to make sure people can make legal agent.**"
+      },
+      {
+        "line": 120,
+        "text": "    - x # current position in world coordinates."
+      },
+      {
+        "line": 121,
+        "text": "    - y # current position in world coordinates."
+      },
+      {
+        "line": 128,
+        "text": "    - x_command_far # farther waypoint x in world coordinates."
+      },
+      {
+        "line": 129,
+        "text": "    - y_command_far # farther waypoint y in world coordinates."
+      },
+      {
+        "line": 131,
+        "text": "    - x_command_near # nearby waypoint x in world coordinates."
+      },
+      {
+        "line": 132,
+        "text": "    - y_command_near # nearby waypoint y in world coordinates."
+      },
+      {
+        "line": 144,
+        "text": "            - location # Location coordinates of the CAM_XXXX(x,y,z in world coordinates)"
+      },
+      {
+        "line": 145,
+        "text": "            - rotation # Orientation of the CAM_XXXX in world coordinates."
+      },
+      {
+        "line": 147,
+        "text": "            - world2cam # Transformation from world coordinates to camera coordinates"
+      },
+      {
+        "line": 148,
+        "text": "            - cam2ego # Transformation from camera coordinates to ego_vehicle coordinates"
+      },
+      {
+        "line": 153,
+        "text": "            - location # Location coordinates of the RADAR_XXXX(x,y,z in world coordinates)"
+      },
+      {
+        "line": 154,
+        "text": "            - rotation # Orientation of the RADAR_XXXX in world coordinates."
+      },
+      {
+        "line": 155,
+        "text": "            - world2radar # Transformation from world coordinates to radar coordinates"
+      },
+      {
+        "line": 156,
+        "text": "            - radar2ego # Transformation from radar coordinates to ego_vehicle coordinates"
+      },
+      {
+        "line": 158,
+        "text": "            - location # Location coordinates of the LIDAR_TOP(x,y,z in world coordinates)"
+      },
+      {
+        "line": 159,
+        "text": "            - rotation  # Orientation of the LIDAR_TOP in world coordinates."
+      },
+      {
+        "line": 160,
+        "text": "            - world2lidar # Transformation from world coordinates to lidar coordinates"
+      },
+      {
+        "line": 161,
+        "text": "            - lidar2ego # Transformation from lidar coordinates to ego_vehicle coordinates"
+      },
+      {
+        "line": 168,
+        "text": "            - location # Location coordinates of the ego_vehicle(x,y,z in world coordinates)"
+      },
+      {
+        "line": 169,
+        "text": "            - rotation # Orientation of the ego_vehicle in world coordinates."
+      },
+      {
+        "line": 170,
+        "text": "            - bbx_loc # Bounding box location(x,y,z in ego coordinates)"
+      },
+      {
+        "line": 171,
+        "text": "            - center # Center point of the ego_vehicle in world coordinates."
+      },
+      {
+        "line": 172,
+        "text": "            - extent # Extension length of ego_vehicle in world coordinates."
+      },
+      {
+        "line": 173,
+        "text": "            - world_cord # Bounding box verts coordinates in world coordinates."
+      },
+      {
+        "line": 181,
+        "text": "            - world2ego # Transformation from world coordinates to ego_vehicle coordinates"
+      },
+      {
+        "line": 186,
+        "text": "            - location # Location coordinates of the vehicle(x,y,z in world coordinates)"
+      },
+      {
+        "line": 187,
+        "text": "            - rotation # Orientation of the vehicle in world coordinates."
+      },
+      {
+        "line": 188,
+        "text": "            - bbx_loc # Bounding box location(x,y,z in ego coordinates)"
+      },
+      {
+        "line": 189,
+        "text": "            - center # Center point of the vehicle in world coordinates."
+      },
+      {
+        "line": 190,
+        "text": "            - extent # Extension length of vehicle in world coordinates."
+      },
+      {
+        "line": 191,
+        "text": "            - world_cord # Bounding box verts coordinates in world coordinates."
+      },
+      {
+        "line": 204,
+        "text": "            - world2vehicle # Transformation from world coordinates to vehicle coordinates"
+      },
+      {
+        "line": 209,
+        "text": "            - location # Location coordinates of the traffic light(x,y,z in world coordinates)"
+      },
+      {
+        "line": 210,
+        "text": "            - rotation # Orientation of the traffic light in world coordinates."
+      },
+      {
+        "line": 211,
+        "text": "            - center # Center point of the traffic light in world coordinates."
+      },
+      {
+        "line": 212,
+        "text": "            - extent # Extension length of traffic light in world coordinates."
+      },
+      {
+        "line": 228,
+        "text": "            - location # Location coordinates of the traffic sign(x,y,z in world coordinates)"
+      },
+      {
+        "line": 229,
+        "text": "            - rotation # Orientation of the traffic sign in world coordinates."
+      },
+      {
+        "line": 230,
+        "text": "            - center # Center point of the traffic sign in world coordinates."
+      },
+      {
+        "line": 231,
+        "text": "            - extent # Extension length of traffic sign in world coordinates."
+      },
+      {
+        "line": 239,
+        "text": "            - world2sign # Transformation from world coordinates to sign coordinates"
+      },
+      {
+        "line": 246,
+        "text": "            # for others sign specified, because CARLA API get incorrect coordinates, so we need to adjust it."
+      },
+      {
+        "line": 247,
+        "text": "            - bbx_loc # Bounding box location(x,y,z in ego coordinates)"
+      },
+      {
+        "line": 248,
+        "text": "            - world_cord # Bounding box verts coordinates in world coordinates."
+      },
+      {
+        "line": 253,
+        "text": "            - location # Location coordinates of the pedestrian(x,y,z in world coordinates)"
+      },
+      {
+        "line": 254,
+        "text": "            - rotation # Orientation of pedestrian in world coordinates"
+      },
+      {
+        "line": 255,
+        "text": "            - bbx_loc # Bounding box location(x,y,z in ego coordinates)"
+      },
+      {
+        "line": 256,
+        "text": "            - center # Center point of the pedestrian in world coordinates."
+      },
+      {
+        "line": 257,
+        "text": "            - extent # Extension length of pedestrian in world coordinates."
+      },
+      {
+        "line": 258,
+        "text": "            - world_cord  # Bounding box verts coordinates in world coordinates."
+      },
+      {
+        "line": 270,
+        "text": "            - world2ped # Transformation from world coordinates to pedestrian coordinates"
+      }
+    ]
+  },
+  "metadata_files": [],
+  "annotation_keys": [
+    "acceleration",
+    "angular_velocity",
+    "bounding_boxes",
+    "brake",
+    "command_far",
+    "command_near",
+    "next_command",
+    "only_ap_brake",
+    "reverse",
+    "sensors",
+    "should_brake",
+    "speed",
+    "steer",
+    "theta",
+    "throttle",
+    "weather",
+    "x",
+    "x_command_far",
+    "x_command_near",
+    "x_target",
+    "y",
+    "y_command_far",
+    "y_command_near",
+    "y_target"
+  ],
+  "actor_classes": {
+    "ego_vehicle": 2295,
+    "vehicle": 25267,
+    "traffic_light": 4672,
+    "traffic_sign": 13130,
+    "walker": 124
+  }
+}

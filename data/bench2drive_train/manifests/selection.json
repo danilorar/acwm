@@ -1,0 +1,1197 @@
+{
+  "repository": "rethinklab/Bench2Drive-V0.0.4",
+  "revision": "d84ae18cf20a88b9220df1bc15c073d8824b7ac1",
+  "seed": 42,
+  "selected": [
+    {
+      "path": "Accident_Town13_Route3320_Weather8_02-10-07-01-19.tar.gz",
+      "size": 396856229,
+      "sha256": "261c16732f6af8d698aa57de0da9ca745218aac76aff013ffdd5a527f672f544",
+      "scenario_type": "Accident",
+      "town": "Town13",
+      "route": 3320,
+      "weather": 8
+    },
+    {
+      "path": "AccidentTwoWays_Town13_Route30886_Weather1_02-08-06-07-33.tar.gz",
+      "size": 892893592,
+      "sha256": "7e1f92ab908391738d3171d86607e79c58c3a462e5758beff9139aac8ca256b6",
+      "scenario_type": "AccidentTwoWays",
+      "town": "Town13",
+      "route": 30886,
+      "weather": 1
+    },
+    {
+      "path": "BlockedIntersection_Town12_Route13417_Weather22_02-07-17-49-34.tar.gz",
+      "size": 356500320,
+      "sha256": "52649dcff79bd279dd11cd5b5ba0ea8a2bc0f87a2a4dcebc875d0ddaa1e00c67",
+      "scenario_type": "BlockedIntersection",
+      "town": "Town12",
+      "route": 13417,
+      "weather": 22
+    },
+    {
+      "path": "ConstructionObstacle_Town12_Route18556_Weather3_02-06-03-09-06.tar.gz",
+      "size": 330373286,
+      "sha256": "c04e03ac73ef73ec3a517eb9f42c5843780336aefe747e0c5e07d3fcad04af37",
+      "scenario_type": "ConstructionObstacle",
+      "town": "Town12",
+      "route": 18556,
+      "weather": 3
+    },
+    {
+      "path": "ConstructionObstacleTwoWays_Town13_Route29857_Weather13_02-12-19-13-18.tar.gz",
+      "size": 518433757,
+      "sha256": "b7f5a2eade926d26f79dd6d0210ed6d088ba270db18cab8c5ff8d5c3935d21e5",
+      "scenario_type": "ConstructionObstacleTwoWays",
+      "town": "Town13",
+      "route": 29857,
+      "weather": 13
+    },
+    {
+      "path": "ControlLoss_Town13_Route32860_Weather15_02-07-06-36-33.tar.gz",
+      "size": 802256800,
+      "sha256": "e1dfe90a909aeb177cef0742f0facd1da28266cf8fa9b31a2014c6919164c0b4",
+      "scenario_type": "ControlLoss",
+      "town": "Town13",
+      "route": 32860,
+      "weather": 15
+    },
+    {
+      "path": "CrossingBicycleFlow_Town12_Route36474_Weather2_02-05-20-26-29.tar.gz",
+      "size": 679705857,
+      "sha256": "28bcedab1a5a050b5603c88bb903237b5b545798c1f7010bfe9c3aa117a62d25",
+      "scenario_type": "CrossingBicycleFlow",
+      "town": "Town12",
+      "route": 36474,
+      "weather": 2
+    },
+    {
+      "path": "DynamicObjectCrossing_Town11_Route24372_Weather10_02-07-12-27-12.tar.gz",
+      "size": 206117954,
+      "sha256": "f1d582b280d93489720a559b4debadb3034acbb49bb8904d4bef0154b41d603d",
+      "scenario_type": "DynamicObjectCrossing",
+      "town": "Town11",
+      "route": 24372,
+      "weather": 10
+    },
+    {
+      "path": "EnterActorFlow_Town12_Route12323_Weather8_02-08-09-05-52.tar.gz",
+      "size": 765439744,
+      "sha256": "e88d5c2574d299ccc734e59b216d382fb23807679d9335679487dcc1603e7d19",
+      "scenario_type": "EnterActorFlow",
+      "town": "Town12",
+      "route": 12323,
+      "weather": 8
+    },
+    {
+      "path": "HardBreakRoute_Town12_Route22799_Weather18_02-07-00-07-24.tar.gz",
+      "size": 311934158,
+      "sha256": "bae02fde4e60e57e4e7e59bd10d4bc4d5f004f2d71c33acc6d9ee56489b3a4ef",
+      "scenario_type": "HardBreakRoute",
+      "town": "Town12",
+      "route": 22799,
+      "weather": 18
+    },
+    {
+      "path": "HazardAtSideLane_Town13_Route29143_Weather18_02-06-05-37-37.tar.gz",
+      "size": 371038759,
+      "sha256": "9d7bfa1ee69230d7d73c60fb04431e626a492b2875d7e350b43c2e129735abca",
+      "scenario_type": "HazardAtSideLane",
+      "town": "Town13",
+      "route": 29143,
+      "weather": 18
+    },
+    {
+      "path": "HazardAtSideLaneTwoWays_Town12_Route21062_Weather20_02-07-01-33-47.tar.gz",
+      "size": 224384074,
+      "sha256": "6ce70a960a308719828380cb7d1921cd051b0d20165f1298d4595b229e2d6005",
+      "scenario_type": "HazardAtSideLaneTwoWays",
+      "town": "Town12",
+      "route": 21062,
+      "weather": 20
+    },
+    {
+      "path": "HighwayCutIn_Town12_Route24073_Weather11_02-07-11-08-20.tar.gz",
+      "size": 226502849,
+      "sha256": "5ba233bd88f004e3c408c5a460501d7e300e48da0c879efdbad05e0b1a5764a3",
+      "scenario_type": "HighwayCutIn",
+      "town": "Town12",
+      "route": 24073,
+      "weather": 11
+    },
+    {
+      "path": "HighwayExit_Town12_Route23692_Weather22_02-06-06-07-48.tar.gz",
+      "size": 227782886,
+      "sha256": "bf5b9b83cf5afd007aee477614ef4f267834a85f5178bcc52eef230cd10764af",
+      "scenario_type": "HighwayExit",
+      "town": "Town12",
+      "route": 23692,
+      "weather": 22
+    },
+    {
+      "path": "InterurbanActorFlow_Town12_Route3032_Weather16_02-07-20-20-06.tar.gz",
+      "size": 259580289,
+      "sha256": "47244db8361ff15525502c70927cc6727cbab858dc65a40f522871d393f9078e",
+      "scenario_type": "InterurbanActorFlow",
+      "town": "Town12",
+      "route": 3032,
+      "weather": 16
+    },
+    {
+      "path": "InterurbanAdvancedActorFlow_Town13_Route39116_Weather9_02-10-17-12-15.tar.gz",
+      "size": 346042232,
+      "sha256": "5782014fce020b3db82adfc3e5145202ffdb1eda86f9a0f9f033b14d6363cf63",
+      "scenario_type": "InterurbanAdvancedActorFlow",
+      "town": "Town13",
+      "route": 39116,
+      "weather": 9
+    },
+    {
+      "path": "InvadingTurn_Town05_Route26841_Weather18_02-09-17-59-11.tar.gz",
+      "size": 1959688018,
+      "sha256": "852d738255e6023c597229c925330ddfdbcfc7d217965169a5825738d7665d47",
+      "scenario_type": "InvadingTurn",
+      "town": "Town05",
+      "route": 26841,
+      "weather": 18
+    },
+    {
+      "path": "MergerIntoSlowTraffic_Town06_Route26016_Weather9_02-09-23-35-09.tar.gz",
+      "size": 229938814,
+      "sha256": "478e8f811ce8da5433b2d1bceb368a7d2f175a2cc8f8a42aee9cbf960c212fdc",
+      "scenario_type": "MergerIntoSlowTraffic",
+      "town": "Town06",
+      "route": 26016,
+      "weather": 9
+    },
+    {
+      "path": "MergerIntoSlowTrafficV2_Town06_Route26401_Weather22_02-07-08-39-06.tar.gz",
+      "size": 227520924,
+      "sha256": "eeeb1f0cb716e9cf4ae12e6145a38ebd44e3a6446c08dc338a072606f532a482",
+      "scenario_type": "MergerIntoSlowTrafficV2",
+      "town": "Town06",
+      "route": 26401,
+      "weather": 22
+    },
+    {
+      "path": "NonSignalizedJunctionLeftTurn_Town12_Route7568_Weather19_02-11-14-37-44.tar.gz",
+      "size": 208857710,
+      "sha256": "c6728f9adb0fb63f43b51f8361780aaa5e77afe5385293eb121acb30aae42226",
+      "scenario_type": "NonSignalizedJunctionLeftTurn",
+      "town": "Town12",
+      "route": 7568,
+      "weather": 19
+    },
+    {
+      "path": "NonSignalizedJunctionLeftTurnEnterFlow_Town13_Route33401_Weather11_02-11-12-45-58.tar.gz",
+      "size": 166578590,
+      "sha256": "4e369f8ee481bfbe29ca81f4c3dd79b351dd8e161f7209d14ce309ebaf7b2d21",
+      "scenario_type": "NonSignalizedJunctionLeftTurnEnterFlow",
+      "town": "Town13",
+      "route": 33401,
+      "weather": 11
+    },
+    {
+      "path": "NonSignalizedJunctionRightTurn_Town12_Route7725_Weather1_02-11-20-51-57.tar.gz",
+      "size": 196279087,
+      "sha256": "218c19e29a78f43e768bc6ddc1fe10c22f320119071f45bbcf78b3f7d10b5901",
+      "scenario_type": "NonSignalizedJunctionRightTurn",
+      "town": "Town12",
+      "route": 7725,
+      "weather": 1
+    },
+    {
+      "path": "OppositeVehicleRunningRedLight_Town12_Route6358_Weather6_02-06-15-38-31.tar.gz",
+      "size": 140504395,
+      "sha256": "0dc8236fc15491fa194a8bfdd123419a12dbf63971f4202773b04a41f972d0ad",
+      "scenario_type": "OppositeVehicleRunningRedLight",
+      "town": "Town12",
+      "route": 6358,
+      "weather": 6
+    },
+    {
+      "path": "OppositeVehicleTakingPriority_Town12_Route9043_Weather13_02-07-13-03-59.tar.gz",
+      "size": 196684835,
+      "sha256": "54c90e978456809785734fd79e603cf75e38b74219b46c432450f99cb2bd63e0",
+      "scenario_type": "OppositeVehicleTakingPriority",
+      "town": "Town12",
+      "route": 9043,
+      "weather": 13
+    },
+    {
+      "path": "ParkedObstacle_Town12_Route19827_Weather22_02-10-08-23-28.tar.gz",
+      "size": 280672491,
+      "sha256": "4d8bbc00f180cac86a343dad6a61170940f7237ea85b6e2ad18bccded01f0875",
+      "scenario_type": "ParkedObstacle",
+      "town": "Town12",
+      "route": 19827,
+      "weather": 22
+    },
+    {
+      "path": "ParkedObstacleTwoWays_Town13_Route3443_Weather13_02-06-11-55-20.tar.gz",
+      "size": 496353514,
+      "sha256": "d4e88ee6e9427014ae83cf03a67a85d91234d3bbc033392183bfb4717afe4c75",
+      "scenario_type": "ParkedObstacleTwoWays",
+      "town": "Town13",
+      "route": 3443,
+      "weather": 13
+    },
+    {
+      "path": "ParkingCrossingPedestrian_Town11_Route24432_Weather22_02-09-22-30-11.tar.gz",
+      "size": 228552019,
+      "sha256": "f48cb6200042b45b37c11f4906f14bc1381fcc8aa4186f08021045ff6193c95a",
+      "scenario_type": "ParkingCrossingPedestrian",
+      "town": "Town11",
+      "route": 24432,
+      "weather": 22
+    },
+    {
+      "path": "ParkingCutIn_Town12_Route2502_Weather6_02-08-08-41-53.tar.gz",
+      "size": 299612247,
+      "sha256": "7fc1e83dc26d64388008f2c7e0a531781256739697f60d08047da28ef7839aa4",
+      "scenario_type": "ParkingCutIn",
+      "town": "Town12",
+      "route": 2502,
+      "weather": 6
+    },
+    {
+      "path": "ParkingExit_Town13_Route3504_Weather19_02-08-02-59-38.tar.gz",
+      "size": 706138673,
+      "sha256": "01106af9016db7c505282e3f4bee6039db135954709c0ec30396ba320d6fa960",
+      "scenario_type": "ParkingExit",
+      "town": "Town13",
+      "route": 3504,
+      "weather": 19
+    },
+    {
+      "path": "PedestrianCrossing_Town13_Route3837_Weather0_02-08-22-30-41.tar.gz",
+      "size": 350353656,
+      "sha256": "a8453d7d79c8e3cf7127e427ecd3035681d3f63a74e7a3b66cd258ca736ba768",
+      "scenario_type": "PedestrianCrossing",
+      "town": "Town13",
+      "route": 3837,
+      "weather": 0
+    },
+    {
+      "path": "SequentialLaneChange_Town12_Route2438_Weather10_02-07-04-50-14.tar.gz",
+      "size": 325658332,
+      "sha256": "d43972e7c5444d326b75a8e334eb51e27b64eea32e970a455d191cece1cae92c",
+      "scenario_type": "SequentialLaneChange",
+      "town": "Town12",
+      "route": 2438,
+      "weather": 10
+    },
+    {
+      "path": "SignalizedJunctionLeftTurn_Town05_Route26871_Weather2_02-06-14-03-27.tar.gz",
+      "size": 280445548,
+      "sha256": "e4c98cc7bec5310dcfb7ee4e9d58d144211c667596d02d1669cb8e26e015fdf3",
+      "scenario_type": "SignalizedJunctionLeftTurn",
+      "town": "Town05",
+      "route": 26871,
+      "weather": 2
+    },
+    {
+      "path": "SignalizedJunctionLeftTurnEnterFlow_Town13_Route34988_Weather12_02-06-18-26-14.tar.gz",
+      "size": 270206970,
+      "sha256": "3c8278e0190453976c474c54f4bb245e467356c5e390d75e0b8c02e29f868e3e",
+      "scenario_type": "SignalizedJunctionLeftTurnEnterFlow",
+      "town": "Town13",
+      "route": 34988,
+      "weather": 12
+    },
+    {
+      "path": "SignalizedJunctionRightTurn_Town12_Route5465_Weather22_02-06-19-17-17.tar.gz",
+      "size": 197215607,
+      "sha256": "aadfc64f4e3562468c3016ededebd4b7ac942c1a95c109f465c8d0c06a7748d8",
+      "scenario_type": "SignalizedJunctionRightTurn",
+      "town": "Town12",
+      "route": 5465,
+      "weather": 22
+    },
+    {
+      "path": "StaticCutIn_Town12_Route22362_Weather2_02-05-13-17-52.tar.gz",
+      "size": 357455860,
+      "sha256": "f4eebb1752d71ca9769cb85851baf205be935996d99e68fdfc5f4af2d7e392d1",
+      "scenario_type": "StaticCutIn",
+      "town": "Town12",
+      "route": 22362,
+      "weather": 2
+    },
+    {
+      "path": "T_Junction_Town02_Route24914_Weather14_02-06-08-17-18.tar.gz",
+      "size": 236409126,
+      "sha256": "967b04fffc63209e1c179ac58d9dbdbe32537e1113736271b7371195d31d18ee",
+      "scenario_type": "T_Junction",
+      "town": "Town02",
+      "route": 24914,
+      "weather": 14
+    },
+    {
+      "path": "VanillaNonSignalizedTurn_Town03_Route27760_Weather16_02-05-16-37-31.tar.gz",
+      "size": 755183638,
+      "sha256": "7064cca2f440459ec1392d5998d665ae2a10d133b52d78e3d1d42b31a37fe562",
+      "scenario_type": "VanillaNonSignalizedTurn",
+      "town": "Town03",
+      "route": 27760,
+      "weather": 16
+    },
+    {
+      "path": "VanillaNonSignalizedTurnEncounterStopsign_Town12_Route17143_Weather15_02-06-01-58-36.tar.gz",
+      "size": 130244797,
+      "sha256": "08167eaa9336a0f934cd179ff5e8fadcf7a4c766b448bb1e329e6731a8367c4f",
+      "scenario_type": "VanillaNonSignalizedTurnEncounterStopsign",
+      "town": "Town12",
+      "route": 17143,
+      "weather": 15
+    },
+    {
+      "path": "VanillaSignalizedTurnEncounterGreenLight_Town12_Route15265_Weather12_02-04-11-35-26.tar.gz",
+      "size": 119887828,
+      "sha256": "60975d5935a949bbeecab088e84ff2c0ebca2e0fcc6d9c2a374027a9d0dec495",
+      "scenario_type": "VanillaSignalizedTurnEncounterGreenLight",
+      "town": "Town12",
+      "route": 15265,
+      "weather": 12
+    },
+    {
+      "path": "VanillaSignalizedTurnEncounterRedLight_Town12_Route15607_Weather21_02-05-20-09-24.tar.gz",
+      "size": 541596883,
+      "sha256": "14f0730e26e512caa4d0a2f39a46b1f5b89991cfa73e6564ec11d09c28cc742c",
+      "scenario_type": "VanillaSignalizedTurnEncounterRedLight",
+      "town": "Town12",
+      "route": 15607,
+      "weather": 21
+    },
+    {
+      "path": "VehicleOpensDoorTwoWays_Town13_Route31513_Weather22_02-08-04-12-58.tar.gz",
+      "size": 998983969,
+      "sha256": "e19c0172c9d8460ba8e68212b40bf36f5b26b3c3a5054d813ec2becb614e189d",
+      "scenario_type": "VehicleOpensDoorTwoWays",
+      "town": "Town13",
+      "route": 31513,
+      "weather": 22
+    },
+    {
+      "path": "VehicleTurningRoute_Town11_Route27232_Weather17_02-06-23-55-18.tar.gz",
+      "size": 215361481,
+      "sha256": "64d036925a50f016fc91dc60ad15605bcbcbdbb360153b1b049f49e5d5885b0e",
+      "scenario_type": "VehicleTurningRoute",
+      "town": "Town11",
+      "route": 27232,
+      "weather": 17
+    },
+    {
+      "path": "VehicleTurningRoutePedestrian_Town12_Route10807_Weather3_02-10-14-30-18.tar.gz",
+      "size": 237345849,
+      "sha256": "8a305971af06d7cc2ea391f659f52909d530cf577a0a28fff08115f2e38e86fc",
+      "scenario_type": "VehicleTurningRoutePedestrian",
+      "town": "Town12",
+      "route": 10807,
+      "weather": 3
+    },
+    {
+      "path": "YieldToEmergencyVehicle_Town12_Route1813_Weather6_02-12-08-56-02.tar.gz",
+      "size": 342675614,
+      "sha256": "78ad1d4ca03321a6bf4a9dc2c97b07e43e72fad18e9869c0353edb0be19f0a0b",
+      "scenario_type": "YieldToEmergencyVehicle",
+      "town": "Town12",
+      "route": 1813,
+      "weather": 6
+    },
+    {
+      "path": "Accident_Town12_Route18953_Weather3_02-05-16-49-28.tar.gz",
+      "size": 293132580,
+      "sha256": "d0a8f02ad5208c9dea4e1b47e42aff887ebd840ef4579b97577694bc0d16ccbe",
+      "scenario_type": "Accident",
+      "town": "Town12",
+      "route": 18953,
+      "weather": 3
+    },
+    {
+      "path": "AccidentTwoWays_Town13_Route30440_Weather6_02-09-18-12-09.tar.gz",
+      "size": 546922888,
+      "sha256": "8e6389a004a36ef7c6b8c542fe8d70209278020aaebc6cce0944acaec3b8b7b5",
+      "scenario_type": "AccidentTwoWays",
+      "town": "Town13",
+      "route": 30440,
+      "weather": 6
+    },
+    {
+      "path": "BlockedIntersection_Town11_Route27472_Weather13_02-06-00-21-27.tar.gz",
+      "size": 223525229,
+      "sha256": "96424d3c0dc2b90e7919d15c4381105dd58f2697abdd450c759cd0dfeb21f343",
+      "scenario_type": "BlockedIntersection",
+      "town": "Town11",
+      "route": 27472,
+      "weather": 13
+    },
+    {
+      "path": "ConstructionObstacle_Town13_Route3290_Weather11_02-07-12-27-12.tar.gz",
+      "size": 521044690,
+      "sha256": "5bab006903f94f9cf75f7f26464e258ba89b46f3a189bccadb1cc70d82d758dc",
+      "scenario_type": "ConstructionObstacle",
+      "town": "Town13",
+      "route": 3290,
+      "weather": 11
+    },
+    {
+      "path": "ConstructionObstacleTwoWays_Town12_Route2621_Weather16_02-11-13-20-06.tar.gz",
+      "size": 251649551,
+      "sha256": "0592278f98d663d9f1edbe9216db3db28c4418003f42f7aef206914122423665",
+      "scenario_type": "ConstructionObstacleTwoWays",
+      "town": "Town12",
+      "route": 2621,
+      "weather": 16
+    },
+    {
+      "path": "ControlLoss_Town12_Route23482_Weather22_02-08-22-23-17.tar.gz",
+      "size": 1216766189,
+      "sha256": "a2fbedb66a1a49ccae8f7d3ccd3e5ff0c9bfa032824da6e5321c6d189c138599",
+      "scenario_type": "ControlLoss",
+      "town": "Town12",
+      "route": 23482,
+      "weather": 22
+    },
+    {
+      "path": "CrossingBicycleFlow_Town12_Route36234_Weather14_02-06-15-28-21.tar.gz",
+      "size": 686814766,
+      "sha256": "d2cf320a00511fe6f3d0b54a0989261151fa87f4fd9723f257854b32c8117528",
+      "scenario_type": "CrossingBicycleFlow",
+      "town": "Town12",
+      "route": 36234,
+      "weather": 14
+    },
+    {
+      "path": "DynamicObjectCrossing_Town12_Route18075_Weather22_02-08-04-43-21.tar.gz",
+      "size": 366917955,
+      "sha256": "5f68fd9dd4f5da99120e92e4fa2ae606fdf4289543184357cf9b806b6f4e4119",
+      "scenario_type": "DynamicObjectCrossing",
+      "town": "Town12",
+      "route": 18075,
+      "weather": 22
+    },
+    {
+      "path": "EnterActorFlow_Town12_Route12405_Weather15_02-06-02-34-43.tar.gz",
+      "size": 703372799,
+      "sha256": "a4e0beaa38fb6c8443532f32848a5ee06ee3c1ed2b5eeddb950106f212f9b1e6",
+      "scenario_type": "EnterActorFlow",
+      "town": "Town12",
+      "route": 12405,
+      "weather": 15
+    },
+    {
+      "path": "HardBreakRoute_Town06_Route25603_Weather20_02-05-13-36-04.tar.gz",
+      "size": 427006884,
+      "sha256": "f3cb507f3ed82ed580d340d331ab177a30e9870a941a97d72a41729c04db80b4",
+      "scenario_type": "HardBreakRoute",
+      "town": "Town06",
+      "route": 25603,
+      "weather": 20
+    },
+    {
+      "path": "HazardAtSideLane_Town12_Route20289_Weather17_02-06-05-22-57.tar.gz",
+      "size": 250540672,
+      "sha256": "ce7e54ee73ba9a2ca6f6ed796357e489e848381027aa8ae4c764e1df1a9d929d",
+      "scenario_type": "HazardAtSideLane",
+      "town": "Town12",
+      "route": 20289,
+      "weather": 17
+    },
+    {
+      "path": "HazardAtSideLaneTwoWays_Town01_Route24421_Weather7_02-05-20-19-17.tar.gz",
+      "size": 405923640,
+      "sha256": "feeba37450f146a63ee84db91748e0d3d17e1199220500bc5801f53bebf1bd7b",
+      "scenario_type": "HazardAtSideLaneTwoWays",
+      "town": "Town01",
+      "route": 24421,
+      "weather": 7
+    },
+    {
+      "path": "HighwayCutIn_Town13_Route23830_Weather9_02-07-17-47-17.tar.gz",
+      "size": 359400347,
+      "sha256": "f4038c9103d3008560584b736ace2a914292bd6a34bc85ab47ee2ecf3b7625ac",
+      "scenario_type": "HighwayCutIn",
+      "town": "Town13",
+      "route": 23830,
+      "weather": 9
+    },
+    {
+      "path": "HighwayExit_Town13_Route24077_Weather10_02-08-07-22-28.tar.gz",
+      "size": 355899664,
+      "sha256": "e68713871e2113818f5566ebe711c06329f0af45f6fe88a842dd6b43b9ce7d26",
+      "scenario_type": "HighwayExit",
+      "town": "Town13",
+      "route": 24077,
+      "weather": 10
+    },
+    {
+      "path": "InterurbanActorFlow_Town13_Route24089_Weather12_02-08-19-21-40.tar.gz",
+      "size": 369995570,
+      "sha256": "48098b8dae121bc2e32974c7f8919833573f4f5ba06462a49303be9464a9fce3",
+      "scenario_type": "InterurbanActorFlow",
+      "town": "Town13",
+      "route": 24089,
+      "weather": 12
+    },
+    {
+      "path": "InterurbanAdvancedActorFlow_Town06_Route303_Weather7_02-06-16-31-07.tar.gz",
+      "size": 229810315,
+      "sha256": "0f7cdf1e8ae08164568836f48f85efc1268bdf463708ea888a8bbc306eeaba30",
+      "scenario_type": "InterurbanAdvancedActorFlow",
+      "town": "Town06",
+      "route": 303,
+      "weather": 7
+    },
+    {
+      "path": "InvadingTurn_Town12_Route2801_Weather0_02-09-16-10-00.tar.gz",
+      "size": 291516500,
+      "sha256": "a0cd916765a6ac8670a58cf939c62493dfa074d13767233a4616ce6f93dc3ac2",
+      "scenario_type": "InvadingTurn",
+      "town": "Town12",
+      "route": 2801,
+      "weather": 0
+    },
+    {
+      "path": "MergerIntoSlowTraffic_Town13_Route625_Weather15_02-08-20-26-08.tar.gz",
+      "size": 396849915,
+      "sha256": "69438e3089945effb633d14ce8a490cfe68a4a6f11fc2b47ece6d2d5d81233f0",
+      "scenario_type": "MergerIntoSlowTraffic",
+      "town": "Town13",
+      "route": 625,
+      "weather": 15
+    },
+    {
+      "path": "MergerIntoSlowTrafficV2_Town12_Route37520_Weather16_02-10-08-36-44.tar.gz",
+      "size": 234911680,
+      "sha256": "f99c3b776f33a6b773e8f9c8f8534b1cf2666960b8f38af8173772668d0cbf8d",
+      "scenario_type": "MergerIntoSlowTrafficV2",
+      "town": "Town12",
+      "route": 37520,
+      "weather": 16
+    },
+    {
+      "path": "NonSignalizedJunctionLeftTurn_Town03_Route27030_Weather21_02-07-01-28-08.tar.gz",
+      "size": 469957891,
+      "sha256": "d487078948c6610fc5848638f1742af050f02d42e0ccf1c4c8925f415b8d23f2",
+      "scenario_type": "NonSignalizedJunctionLeftTurn",
+      "town": "Town03",
+      "route": 27030,
+      "weather": 21
+    },
+    {
+      "path": "NonSignalizedJunctionLeftTurnEnterFlow_Town03_Route28061_Weather2_02-06-04-20-50.tar.gz",
+      "size": 862275738,
+      "sha256": "f00c873e81d262fb7e2da88bb4923cef819553efae3e15a742a33562b690f781",
+      "scenario_type": "NonSignalizedJunctionLeftTurnEnterFlow",
+      "town": "Town03",
+      "route": 28061,
+      "weather": 2
+    },
+    {
+      "path": "NonSignalizedJunctionRightTurn_Town13_Route3682_Weather13_02-08-16-57-44.tar.gz",
+      "size": 138924936,
+      "sha256": "4ead4d425843574af4baab345ecfab45052b5b545de404a6e500c6c207d11290",
+      "scenario_type": "NonSignalizedJunctionRightTurn",
+      "town": "Town13",
+      "route": 3682,
+      "weather": 13
+    },
+    {
+      "path": "OppositeVehicleRunningRedLight_Town10HD_Route24450_Weather16_02-08-17-24-39.tar.gz",
+      "size": 241343012,
+      "sha256": "949c2cd5cccc250ffe26ada9b7d888e6b10ac827cccbc7fb512673c19ed13414",
+      "scenario_type": "OppositeVehicleRunningRedLight",
+      "town": "Town10HD",
+      "route": 24450,
+      "weather": 16
+    },
+    {
+      "path": "OppositeVehicleTakingPriority_Town04_Route27294_Weather6_02-06-01-44-13.tar.gz",
+      "size": 219823891,
+      "sha256": "aa28bcad884d394f6808fa968aeb5f2e64f7965ac7626f9fd2d9b74f68cff460",
+      "scenario_type": "OppositeVehicleTakingPriority",
+      "town": "Town04",
+      "route": 27294,
+      "weather": 6
+    },
+    {
+      "path": "ParkedObstacle_Town13_Route3333_Weather5_02-06-03-53-59.tar.gz",
+      "size": 991754694,
+      "sha256": "5eacd7151784b6308f8f14dfd86ee9072b86ffa61d85972d4f780006d1116c29",
+      "scenario_type": "ParkedObstacle",
+      "town": "Town13",
+      "route": 3333,
+      "weather": 5
+    },
+    {
+      "path": "ParkedObstacleTwoWays_Town11_Route25767_Weather9_02-07-13-33-15.tar.gz",
+      "size": 226557818,
+      "sha256": "5249410fa29345bfeac2331921e52357eae691305f26b7b7991d8c1a584e7b73",
+      "scenario_type": "ParkedObstacleTwoWays",
+      "town": "Town11",
+      "route": 25767,
+      "weather": 9
+    },
+    {
+      "path": "ParkingCrossingPedestrian_Town12_Route18216_Weather8_02-07-13-22-13.tar.gz",
+      "size": 319832812,
+      "sha256": "8c3928227c4f8063c6af5832014a51f202ed99af7ada0479f5b081bfa4b832fe",
+      "scenario_type": "ParkingCrossingPedestrian",
+      "town": "Town12",
+      "route": 18216,
+      "weather": 8
+    },
+    {
+      "path": "ParkingCutIn_Town13_Route3266_Weather2_02-05-15-16-24.tar.gz",
+      "size": 435573335,
+      "sha256": "44fd5f523e02369a466a8ee432ea54970de301c2e4c8b7331da0b8d22bc4f30f",
+      "scenario_type": "ParkingCutIn",
+      "town": "Town13",
+      "route": 3266,
+      "weather": 2
+    },
+    {
+      "path": "ParkingExit_Town12_Route2731_Weather20_02-07-01-22-27.tar.gz",
+      "size": 259583935,
+      "sha256": "f8cb98dda9e5db24083549bc2114d0e29350bb6879c0493896faab264307248a",
+      "scenario_type": "ParkingExit",
+      "town": "Town12",
+      "route": 2731,
+      "weather": 20
+    },
+    {
+      "path": "PedestrianCrossing_Town12_Route13850_Weather9_02-09-05-32-03.tar.gz",
+      "size": 895571663,
+      "sha256": "413c8be9482bd95dd1b42f82e417bf8e7943c54c0158a738c0ef690fa5a27bfb",
+      "scenario_type": "PedestrianCrossing",
+      "town": "Town12",
+      "route": 13850,
+      "weather": 9
+    },
+    {
+      "path": "SequentialLaneChange_Town04_Route24295_Weather1_02-12-18-46-10.tar.gz",
+      "size": 302896734,
+      "sha256": "c9049ba3fead8f950f9cb01c6349f7a11f3cb803acb9f790cdf244c4f8ebcfdd",
+      "scenario_type": "SequentialLaneChange",
+      "town": "Town04",
+      "route": 24295,
+      "weather": 1
+    },
+    {
+      "path": "SignalizedJunctionLeftTurn_Town12_Route4000_Weather10_02-08-18-17-03.tar.gz",
+      "size": 373682269,
+      "sha256": "246690e5896a4f59705c65da67980ed5a4f545b85f5307b44ec055232f8a8e2e",
+      "scenario_type": "SignalizedJunctionLeftTurn",
+      "town": "Town12",
+      "route": 4000,
+      "weather": 10
+    },
+    {
+      "path": "SignalizedJunctionLeftTurnEnterFlow_Town13_Route35242_Weather22_02-11-02-23-42.tar.gz",
+      "size": 278304354,
+      "sha256": "ff7bddb498be4ef012455985fd06eb9a5db22ddd45026156a2710fc0fdcd5efa",
+      "scenario_type": "SignalizedJunctionLeftTurnEnterFlow",
+      "town": "Town13",
+      "route": 35242,
+      "weather": 22
+    },
+    {
+      "path": "SignalizedJunctionRightTurn_Town13_Route3612_Weather18_02-11-11-16-07.tar.gz",
+      "size": 167832339,
+      "sha256": "02e68bfdb92c4630243ba983c78d8240b50c68b6d40f2444e299eb37278e28df",
+      "scenario_type": "SignalizedJunctionRightTurn",
+      "town": "Town13",
+      "route": 3612,
+      "weather": 18
+    },
+    {
+      "path": "StaticCutIn_Town11_Route26089_Weather17_02-07-12-17-15.tar.gz",
+      "size": 174413230,
+      "sha256": "89575207f18744a3c7843cfac3805bde6491182914b9a6c144ecad8fb7d8e433",
+      "scenario_type": "StaticCutIn",
+      "town": "Town11",
+      "route": 26089,
+      "weather": 17
+    },
+    {
+      "path": "T_Junction_Town13_Route28312_Weather5_02-07-22-57-01.tar.gz",
+      "size": 806496337,
+      "sha256": "13e3e65ac0b282f78c95d6ae165d970f35be84674825664c6cae3e0ba77fa383",
+      "scenario_type": "T_Junction",
+      "town": "Town13",
+      "route": 28312,
+      "weather": 5
+    },
+    {
+      "path": "VanillaNonSignalizedTurn_Town12_Route16483_Weather21_02-06-15-40-23.tar.gz",
+      "size": 320026854,
+      "sha256": "7ce61377fa8860db25db31009f1d240055748f71cb3f7e04476d82314bd00dc0",
+      "scenario_type": "VanillaNonSignalizedTurn",
+      "town": "Town12",
+      "route": 16483,
+      "weather": 21
+    },
+    {
+      "path": "VanillaNonSignalizedTurnEncounterStopsign_Town13_Route3918_Weather10_02-08-18-42-49.tar.gz",
+      "size": 173174497,
+      "sha256": "18f8e004f93d57694c79b517fa27bc777e975bf17295b817782ec304b82801ea",
+      "scenario_type": "VanillaNonSignalizedTurnEncounterStopsign",
+      "town": "Town13",
+      "route": 3918,
+      "weather": 10
+    },
+    {
+      "path": "VanillaSignalizedTurnEncounterGreenLight_Town03_Route27610_Weather1_02-07-08-48-36.tar.gz",
+      "size": 375031486,
+      "sha256": "4d58f68e84a22917695f5c69c9a473b938ac0423d543df41c9202763af24468c",
+      "scenario_type": "VanillaSignalizedTurnEncounterGreenLight",
+      "town": "Town03",
+      "route": 27610,
+      "weather": 1
+    },
+    {
+      "path": "VanillaSignalizedTurnEncounterRedLight_Town13_Route3882_Weather7_02-05-21-15-37.tar.gz",
+      "size": 357139833,
+      "sha256": "6eb5d850b4a91cb84e54ba048860e7d7fb5eb91d6240232326063134635ec8d4",
+      "scenario_type": "VanillaSignalizedTurnEncounterRedLight",
+      "town": "Town13",
+      "route": 3882,
+      "weather": 7
+    },
+    {
+      "path": "VehicleOpensDoorTwoWays_Town13_Route31534_Weather11_02-08-16-46-53.tar.gz",
+      "size": 795319971,
+      "sha256": "70e3f262d26a572765452b2fff409887f5dec282ba8e97afadff98b5b352e7ef",
+      "scenario_type": "VehicleOpensDoorTwoWays",
+      "town": "Town13",
+      "route": 31534,
+      "weather": 11
+    },
+    {
+      "path": "VehicleTurningRoute_Town12_Route10135_Weather8_02-06-21-18-38.tar.gz",
+      "size": 341833565,
+      "sha256": "f82cce8dbaea0c466e9e888e06480c50e74f23704732f0111b341d0b4900c185",
+      "scenario_type": "VehicleTurningRoute",
+      "town": "Town12",
+      "route": 10135,
+      "weather": 8
+    },
+    {
+      "path": "VehicleTurningRoutePedestrian_Town11_Route27282_Weather18_02-09-21-16-56.tar.gz",
+      "size": 177363580,
+      "sha256": "46923ade7df097cc55e6c026e2b1ef775f9e3a51f465c0652e0fd3474ca4c151",
+      "scenario_type": "VehicleTurningRoutePedestrian",
+      "town": "Town11",
+      "route": 27282,
+      "weather": 18
+    },
+    {
+      "path": "YieldToEmergencyVehicle_Town13_Route3366_Weather2_02-08-05-57-51.tar.gz",
+      "size": 275800170,
+      "sha256": "6cf39505653c4e2e1ad2f0d923bae6aabd06c1ad86105a2c367fdc2690d17300",
+      "scenario_type": "YieldToEmergencyVehicle",
+      "town": "Town13",
+      "route": 3366,
+      "weather": 2
+    },
+    {
+      "path": "Accident_Town03_Route24976_Weather1_02-10-06-35-15.tar.gz",
+      "size": 290005781,
+      "sha256": "9a6aed370de7f4a3c265ba9c43ea3f79298bad1763212277e5c185291717694b",
+      "scenario_type": "Accident",
+      "town": "Town03",
+      "route": 24976,
+      "weather": 1
+    },
+    {
+      "path": "AccidentTwoWays_Town13_Route30912_Weather2_02-06-15-42-13.tar.gz",
+      "size": 531538868,
+      "sha256": "fecd3ab352f43b8ee94a5113d3c447b603bd024ad95d322f9908eb0549cf3a0e",
+      "scenario_type": "AccidentTwoWays",
+      "town": "Town13",
+      "route": 30912,
+      "weather": 2
+    },
+    {
+      "path": "BlockedIntersection_Town13_Route3772_Weather0_02-06-07-58-40.tar.gz",
+      "size": 315996626,
+      "sha256": "4e8e24e15afa84ceb151ac4cf72b5f269085183c11d764cd7be41edf3361890d",
+      "scenario_type": "BlockedIntersection",
+      "town": "Town13",
+      "route": 3772,
+      "weather": 0
+    },
+    {
+      "path": "ConstructionObstacle_Town04_Route24765_Weather2_02-10-03-00-23.tar.gz",
+      "size": 352745526,
+      "sha256": "e1cc00565bd5c91aac4e5231cd47e9a2b8ef44d3184ee72ebc77b1dc38ee43cf",
+      "scenario_type": "ConstructionObstacle",
+      "town": "Town04",
+      "route": 24765,
+      "weather": 2
+    },
+    {
+      "path": "ConstructionObstacleTwoWays_Town13_Route29469_Weather15_02-12-20-11-58.tar.gz",
+      "size": 487856901,
+      "sha256": "864f7eb068772b0dc7aa481d5725da486fd2a5fc9f13a00a1eab3adfc81c505a",
+      "scenario_type": "ConstructionObstacleTwoWays",
+      "town": "Town13",
+      "route": 29469,
+      "weather": 15
+    },
+    {
+      "path": "ControlLoss_Town11_Route26411_Weather21_02-09-08-32-14.tar.gz",
+      "size": 356055183,
+      "sha256": "a377612b8e304a4859f6c5666d0a44ae097bda302e05e44c81628fcfd8506744",
+      "scenario_type": "ControlLoss",
+      "town": "Town11",
+      "route": 26411,
+      "weather": 21
+    },
+    {
+      "path": "CrossingBicycleFlow_Town12_Route35433_Weather5_02-06-00-06-20.tar.gz",
+      "size": 694191151,
+      "sha256": "e48f355a9deaaec9d58ced6bc64da5534f2630fd2c893210e1c7511883bf2c4d",
+      "scenario_type": "CrossingBicycleFlow",
+      "town": "Town12",
+      "route": 35433,
+      "weather": 5
+    },
+    {
+      "path": "DynamicObjectCrossing_Town13_Route3230_Weather8_02-05-09-34-46.tar.gz",
+      "size": 994546086,
+      "sha256": "6aac80dd5976dc60c469874932725a41a1908b64098ab1649162b01461e9ba31",
+      "scenario_type": "DynamicObjectCrossing",
+      "town": "Town13",
+      "route": 3230,
+      "weather": 8
+    },
+    {
+      "path": "EnterActorFlow_Town12_Route11772_Weather11_02-05-18-51-17.tar.gz",
+      "size": 312961225,
+      "sha256": "3881e36242ae1dd736968b31a78c5bcd6addfbc33f9f1544ae58af184b24d6fb",
+      "scenario_type": "EnterActorFlow",
+      "town": "Town12",
+      "route": 11772,
+      "weather": 11
+    },
+    {
+      "path": "HardBreakRoute_Town11_Route26243_Weather10_02-05-19-55-35.tar.gz",
+      "size": 302450896,
+      "sha256": "901c1146cb6ebdc696197f4b41a8a03f9ebd542df247501d88db0c64bcbb93d2",
+      "scenario_type": "HardBreakRoute",
+      "town": "Town11",
+      "route": 26243,
+      "weather": 10
+    },
+    {
+      "path": "HazardAtSideLane_Town03_Route25252_Weather4_02-07-05-33-23.tar.gz",
+      "size": 286585016,
+      "sha256": "e24e469e6a0c49dee321b97781462f2caf9c5a562e4055733813b0eca5c2be8d",
+      "scenario_type": "HazardAtSideLane",
+      "town": "Town03",
+      "route": 25252,
+      "weather": 4
+    },
+    {
+      "path": "HazardAtSideLaneTwoWays_Town13_Route3428_Weather4_02-05-22-00-19.tar.gz",
+      "size": 286556652,
+      "sha256": "9ea04602532b4adfc34e8655bf2f14a6ac36eb3123b271aec4d2d1e65ed7152c",
+      "scenario_type": "HazardAtSideLaneTwoWays",
+      "town": "Town13",
+      "route": 3428,
+      "weather": 4
+    },
+    {
+      "path": "HighwayCutIn_Town15_Route27433_Weather17_02-06-04-26-36.tar.gz",
+      "size": 296583271,
+      "sha256": "c5aef74de17e7f20ea4597c2d1e12f4cd36eebff60bda3c413704a8b552aef6e",
+      "scenario_type": "HighwayCutIn",
+      "town": "Town15",
+      "route": 27433,
+      "weather": 17
+    },
+    {
+      "path": "HighwayExit_Town06_Route25820_Weather15_02-07-20-08-34.tar.gz",
+      "size": 182414144,
+      "sha256": "f0d2c5554129bb9e052fc7bb9eb8247c3e0cbe79af987c0bda5de2960aea148c",
+      "scenario_type": "HighwayExit",
+      "town": "Town06",
+      "route": 25820,
+      "weather": 15
+    },
+    {
+      "path": "InterurbanActorFlow_Town06_Route25981_Weather18_02-05-22-36-31.tar.gz",
+      "size": 169170890,
+      "sha256": "01a5b4a7a975445aadbb8df70f00e05fd1e80c761cf7518ea20e5c597d85914e",
+      "scenario_type": "InterurbanActorFlow",
+      "town": "Town06",
+      "route": 25981,
+      "weather": 18
+    },
+    {
+      "path": "InterurbanAdvancedActorFlow_Town12_Route38644_Weather16_02-07-02-09-46.tar.gz",
+      "size": 228500125,
+      "sha256": "477fd2024a4558e71e66af11031f1e6dfb31ab90e71af217ef9f197445144126",
+      "scenario_type": "InterurbanAdvancedActorFlow",
+      "town": "Town12",
+      "route": 38644,
+      "weather": 16
+    },
+    {
+      "path": "InvadingTurn_Town13_Route3572_Weather20_02-07-03-43-47.tar.gz",
+      "size": 296448214,
+      "sha256": "2ff41a71e659e5dd34558e5a926ab3b84683cf53f9620a7f49a250f52038a046",
+      "scenario_type": "InvadingTurn",
+      "town": "Town13",
+      "route": 3572,
+      "weather": 20
+    },
+    {
+      "path": "MergerIntoSlowTraffic_Town12_Route23956_Weather21_02-11-13-34-55.tar.gz",
+      "size": 188757308,
+      "sha256": "26c5541b2bed2f987b1f907730aab25b1caa8097ec2e55bc3f26e524110f45d2",
+      "scenario_type": "MergerIntoSlowTraffic",
+      "town": "Town12",
+      "route": 23956,
+      "weather": 21
+    },
+    {
+      "path": "MergerIntoSlowTrafficV2_Town13_Route38036_Weather8_02-08-18-27-59.tar.gz",
+      "size": 175379510,
+      "sha256": "8fb57f1958249917f38ae33ba3baa418fb9dc1ef2d1f52ea5be095f172611eac",
+      "scenario_type": "MergerIntoSlowTrafficV2",
+      "town": "Town13",
+      "route": 38036,
+      "weather": 8
+    },
+    {
+      "path": "NonSignalizedJunctionLeftTurn_Town11_Route26942_Weather0_02-13-04-25-57.tar.gz",
+      "size": 138256481,
+      "sha256": "f4f36b4c1357dbba1aa370396f9df984c67f21a3aad4a57540ad132d75825d8c",
+      "scenario_type": "NonSignalizedJunctionLeftTurn",
+      "town": "Town11",
+      "route": 26942,
+      "weather": 0
+    },
+    {
+      "path": "NonSignalizedJunctionLeftTurnEnterFlow_Town13_Route33386_Weather18_02-05-13-27-22.tar.gz",
+      "size": 211435449,
+      "sha256": "db65f441929216bd1b0df76480de4e8356d4d8bf4293a20799f7f0a893463ad8",
+      "scenario_type": "NonSignalizedJunctionLeftTurnEnterFlow",
+      "town": "Town13",
+      "route": 33386,
+      "weather": 18
+    },
+    {
+      "path": "NonSignalizedJunctionRightTurn_Town07_Route25317_Weather12_02-07-22-09-55.tar.gz",
+      "size": 590229748,
+      "sha256": "23477234cd9304a47faad6419f81ca994d87107e3d980e827b9808477bd785af",
+      "scenario_type": "NonSignalizedJunctionRightTurn",
+      "town": "Town07",
+      "route": 25317,
+      "weather": 12
+    },
+    {
+      "path": "OppositeVehicleRunningRedLight_Town07_Route340_Weather0_02-05-17-13-27.tar.gz",
+      "size": 1220076181,
+      "sha256": "4a6732dd298d817309f68e32290189ce029d4bb3d5acd88264bed53eaa676757",
+      "scenario_type": "OppositeVehicleRunningRedLight",
+      "town": "Town07",
+      "route": 340,
+      "weather": 0
+    },
+    {
+      "path": "OppositeVehicleTakingPriority_Town07_Route25485_Weather5_02-05-22-40-41.tar.gz",
+      "size": 258710148,
+      "sha256": "d4e4c2b9ad085ef6ff520989e138f3ff29bad30d7e804fb0f260b735ab0be4bd",
+      "scenario_type": "OppositeVehicleTakingPriority",
+      "town": "Town07",
+      "route": 25485,
+      "weather": 5
+    },
+    {
+      "path": "ParkedObstacle_Town15_Route25306_Weather17_02-10-05-37-08.tar.gz",
+      "size": 393549590,
+      "sha256": "13d553f1b1924e6faedfc8669cb49987ad178568c551e4553b96a63b73898158",
+      "scenario_type": "ParkedObstacle",
+      "town": "Town15",
+      "route": 25306,
+      "weather": 17
+    },
+    {
+      "path": "ParkedObstacleTwoWays_Town12_Route2682_Weather15_02-08-20-18-22.tar.gz",
+      "size": 376134569,
+      "sha256": "5fad169cc02f1aa4dba4bcee7b6856b4e73c9512893f98e152d6efc4cb182fd4",
+      "scenario_type": "ParkedObstacleTwoWays",
+      "town": "Town12",
+      "route": 2682,
+      "weather": 15
+    },
+    {
+      "path": "ParkingCrossingPedestrian_Town13_Route3251_Weather10_02-06-21-55-34.tar.gz",
+      "size": 321561536,
+      "sha256": "e2b01893b6ce29ae8cf0ea3fd5109065beff2fe366be6bf002bedf8b115f368d",
+      "scenario_type": "ParkingCrossingPedestrian",
+      "town": "Town13",
+      "route": 3251,
+      "weather": 10
+    },
+    {
+      "path": "ParkingCutIn_Town12_Route18320_Weather16_02-09-04-41-33.tar.gz",
+      "size": 279335548,
+      "sha256": "0f1204c4ab9b518aaa00ddac5db853ef78c03a5edb0b6122a426716038df4f6f",
+      "scenario_type": "ParkingCutIn",
+      "town": "Town12",
+      "route": 18320,
+      "weather": 16
+    },
+    {
+      "path": "ParkingExit_Town03_Route26337_Weather13_02-09-06-00-55.tar.gz",
+      "size": 418899639,
+      "sha256": "2336334c10ed41c2e5598e9a19ad56417976b2b0c6688dcbaaabe9d07da91742",
+      "scenario_type": "ParkingExit",
+      "town": "Town03",
+      "route": 26337,
+      "weather": 13
+    },
+    {
+      "path": "PedestrianCrossing_Town11_Route27632_Weather4_02-05-14-13-06.tar.gz",
+      "size": 225952742,
+      "sha256": "95d377df93d4dfc709bd6d74046c54484dfae8361514adcc1219bccdbe5de2ce",
+      "scenario_type": "PedestrianCrossing",
+      "town": "Town11",
+      "route": 27632,
+      "weather": 4
+    },
+    {
+      "path": "SequentialLaneChange_Town10HD_Route24200_Weather14_02-06-15-22-16.tar.gz",
+      "size": 270620485,
+      "sha256": "0a6df926a60e106ba24de757acc24dd8eed0d891ee3b4d317f5973a1a1db25bd",
+      "scenario_type": "SequentialLaneChange",
+      "town": "Town10HD",
+      "route": 24200,
+      "weather": 14
+    },
+    {
+      "path": "SignalizedJunctionLeftTurn_Town03_Route26690_Weather22_02-08-04-58-34.tar.gz",
+      "size": 243186044,
+      "sha256": "fca467ce192c259f3e6869bfc79c64b4db4492af510e025542923e6256d244ee",
+      "scenario_type": "SignalizedJunctionLeftTurn",
+      "town": "Town03",
+      "route": 26690,
+      "weather": 22
+    },
+    {
+      "path": "SignalizedJunctionLeftTurnEnterFlow_Town13_Route35097_Weather2_02-08-03-25-25.tar.gz",
+      "size": 282515047,
+      "sha256": "a6a046ce9577673b9dc4e359418cfe67dfcd448eb28c66d001f60d8589a392d6",
+      "scenario_type": "SignalizedJunctionLeftTurnEnterFlow",
+      "town": "Town13",
+      "route": 35097,
+      "weather": 2
+    },
+    {
+      "path": "SignalizedJunctionRightTurn_Town07_Route338_Weather6_02-10-05-24-58.tar.gz",
+      "size": 240358997,
+      "sha256": "dbdc29790adfd6a0cd0fc076d4207555de9c4aa408047e74191a56767e5a2df0",
+      "scenario_type": "SignalizedJunctionRightTurn",
+      "town": "Town07",
+      "route": 338,
+      "weather": 6
+    },
+    {
+      "path": "StaticCutIn_Town06_Route25491_Weather3_02-08-06-25-16.tar.gz",
+      "size": 306034235,
+      "sha256": "ac755addac6480d714609fe8ec22a8df1099a1c75068be7b2ff6de7a86bbbc0f",
+      "scenario_type": "StaticCutIn",
+      "town": "Town06",
+      "route": 25491,
+      "weather": 3
+    },
+    {
+      "path": "T_Junction_Town15_Route28202_Weather20_02-05-21-12-24.tar.gz",
+      "size": 418818541,
+      "sha256": "b4f64f40ccc5ed8f103dfd1739398f142c6a86d15a3ee8974042342bab27cd56",
+      "scenario_type": "T_Junction",
+      "town": "Town15",
+      "route": 28202,
+      "weather": 20
+    },
+    {
+      "path": "VanillaNonSignalizedTurn_Town13_Route3886_Weather15_02-05-08-29-43.tar.gz",
+      "size": 119652957,
+      "sha256": "760e70cade9db6a7b36a553534713caf1aa6f5e1c253c0a53f9b8be39b5bb38e",
+      "scenario_type": "VanillaNonSignalizedTurn",
+      "town": "Town13",
+      "route": 3886,
+      "weather": 15
+    },
+    {
+      "path": "VanillaNonSignalizedTurnEncounterStopsign_Town05_Route27993_Weather4_02-06-03-31-18.tar.gz",
+      "size": 223653145,
+      "sha256": "cc8ec0a47eb660e9d6d8f9a6955112191eec75b9e6357fefd860bf6bdc196de0",
+      "scenario_type": "VanillaNonSignalizedTurnEncounterStopsign",
+      "town": "Town05",
+      "route": 27993,
+      "weather": 4
+    },
+    {
+      "path": "VanillaSignalizedTurnEncounterGreenLight_Town05_Route27806_Weather17_02-06-11-37-43.tar.gz",
+      "size": 863113968,
+      "sha256": "7f2afbf821b87192a0950623d462a0d3602732ded907e8425d980fb19b92aa1b",
+      "scenario_type": "VanillaSignalizedTurnEncounterGreenLight",
+      "town": "Town05",
+      "route": 27806,
+      "weather": 17
+    },
+    {
+      "path": "VanillaSignalizedTurnEncounterRedLight_Town05_Route27831_Weather18_02-05-12-41-22.tar.gz",
+      "size": 802500211,
+      "sha256": "8c603d4becb5aef52729109e7082da45a88ecc3576485d7d12a317b0774e09b8",
+      "scenario_type": "VanillaSignalizedTurnEncounterRedLight",
+      "town": "Town05",
+      "route": 27831,
+      "weather": 18
+    },
+    {
+      "path": "VehicleOpensDoorTwoWays_Town13_Route32317_Weather10_02-09-15-05-27.tar.gz",
+      "size": 545518328,
+      "sha256": "0ace10d6c323871b8d5bdc6323658fd92d35d89d78e35c95647dd6031c3a3c98",
+      "scenario_type": "VehicleOpensDoorTwoWays",
+      "town": "Town13",
+      "route": 32317,
+      "weather": 10
+    },
+    {
+      "path": "VehicleTurningRoute_Town13_Route3716_Weather7_02-08-19-29-25.tar.gz",
+      "size": 789034873,
+      "sha256": "5adf53b9deba2911c59d10cc27f866963efb62465e737e9ca9944fcd76720766",
+      "scenario_type": "VehicleTurningRoute",
+      "town": "Town13",
+      "route": 3716,
+      "weather": 7
+    },
+    {
+      "path": "VehicleTurningRoutePedestrian_Town12_Route10517_Weather10_02-06-02-18-37.tar.gz",
+      "size": 517077303,
+      "sha256": "b514749b14a2a94bd641f5802e29154606fd011a0ddb8db6a5f4615a82c3353c",
+      "scenario_type": "VehicleTurningRoutePedestrian",
+      "town": "Town12",
+      "route": 10517,
+      "weather": 10
+    },
+    {
+      "path": "YieldToEmergencyVehicle_Town15_Route25558_Weather13_02-12-14-34-42.tar.gz",
+      "size": 349499336,
+      "sha256": "d7608488db5929f66597acc7a18c21aaf187964a29ca455ed0e8d91ce935ee70",
+      "scenario_type": "YieldToEmergencyVehicle",
+      "town": "Town15",
+      "route": 25558,
+      "weather": 13
+    }
+  ],
+  "excluded_evaluation_route_matches": 0,
+  "evaluation_xml": "external/Bench2Drive/leaderboard/data/bench2drive_0.0.4_val.xml"
+}
