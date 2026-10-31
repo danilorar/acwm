@@ -1,0 +1,13 @@
+{
+  "preliminary_additional_rgb_budget_gib": 60,
+  "bench_missing_archive_bytes": 52879234513,
+  "person_exact_additional_rgb_bytes": 55126859591,
+  "extraction_reserve_gib": 20,
+  "note": "60 GiB RGB and 49.25 GiB archive preliminary allowance communicated before extraction; exact Person payload audited before extraction. Exact Bench payload will be recorded before its extraction.",
+  "bench_audited_episodes_at_extraction_start": 84,
+  "bench_audited_additional_rgb_bytes": 6379551108,
+  "bench_full_scaled_estimate_bytes": 9937614486,
+  "bench_extraction_policy": "Each episode is extracted only after its own full archive audit establishes six views and exact bytes; no un-audited episode is committed.",
+  "final_additional_rgb_payload_bytes": 64955733760,
+  "bench_exact_additional_rgb_bytes": 9828874169
+}

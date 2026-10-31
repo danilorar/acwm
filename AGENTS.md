@@ -6,6 +6,10 @@
 - Canonical cohort/splits/hypotheses live in data/config; do not silently reselect,
   randomly split overlapping windows, clip raw controls, or bridge missing IDs.
 - Use src.unified_driving_dataset.load_training_datasets for the frozen views.
+  Default RGB tensors have camera axis C=6; explicit front-only keeps C=1.
+  Read docs/multicamera/README.md for calibration, pixel affines and memory.
+  Camera geometry uses optical-to-ego forward/right/up; reconcile handedness
+  before assuming SO(3). Frame-ID alignment is not capture-clock verification.
 - Keep source identity and conservative control-quality filtering. Person native
   ego y is left-positive; shared targets are right-positive. Raw controls are
   preserved. H1 Bench / H0 Person are predictive hypotheses, not timing proof.

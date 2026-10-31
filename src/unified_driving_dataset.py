@@ -10,6 +10,35 @@ from PIL import Image
 from torch.utils.data import Dataset
 
 PROJECT=Path(__file__).resolve().parents[1]
+CAMERA_ORDER=('rgb_front','rgb_front_left','rgb_front_right','rgb_back','rgb_back_left','rgb_back_right')
+
+
+def camera_selection(cameras):
+    if isinstance(cameras,str):cameras=(cameras,)
+    cameras=tuple(cameras)
+    if not cameras or len(cameras)!=len(set(cameras)) or not set(cameras)<=set(CAMERA_ORDER):raise ValueError('Unknown, duplicate or empty camera selection')
+    return tuple(c for c in CAMERA_ORDER if c in cameras)
+
+
+def attach_cameras(record,geometry_path):
+    record['camera_paths']={c:[p.parent.parent/c/p.name for p in record['image_paths']] for c in CAMERA_ORDER}
+    if geometry_path.exists():
+        with np.load(geometry_path,allow_pickle=False) as g:
+            if not np.array_equal(g['frame_ids'],record['frame_ids']) or tuple(g['camera_names'])!=CAMERA_ORDER:raise ValueError('Calibration/frame index mismatch: '+str(geometry_path))
+            record['camera_geometry']={k:g[k].copy() for k in ['intrinsics','camera_to_ego','native_camera_to_ego','valid']}
+        record['camera_native_axes']='CARLA camera forward/right/up; ego y right' if record['source']=='bench2drive' else 'optical camera right/down/forward; ego y left'
+    else:record['camera_native_axes']='unavailable'
+
+
+def resize_camera_intrinsics(intrinsics,original_size,output_size,crop=None):
+    # PIL resize maps pixel-center coordinates by u'=(u+0.5)*scale-0.5.
+    width,height=original_size
+    left,top,right,bottom=(0,0,width,height) if crop is None else crop
+    if not (0<=left<right<=width and 0<=top<bottom<=height):raise ValueError('Crop must lie inside each original image')
+    sx,sy=output_size[0]/(right-left),output_size[1]/(bottom-top)
+    affine=np.array([[sx,0,sx*(.5-left)-.5],[0,sy,sy*(.5-top)-.5],[0,0,1]],np.float64)
+    return affine@intrinsics,affine
+
 
 
 def load_episode_records(project=PROJECT, *, require_images=True):
@@ -55,6 +84,9 @@ def load_episode_records(project=PROJECT, *, require_images=True):
             route=entry['route'],frame_ids=arrays['frame_ids'],speed=arrays['speed'],actions=arrays['actions'],
             world2body=arrays['world2ego'],right_sign=-1,image_paths=paths)
     for key,r in records.items():
+        relative=key.removeprefix(r['source']+'/')
+        geometry=project/'data'/r['source']/'manifests/cameras'/(relative+'.npz')
+        attach_cameras(r,geometry)
         ids=r['frame_ids'];n=len(ids)
         if r['speed'].shape!=(n,) or r['actions'].shape!=(n,3) or r['world2body'].shape!=(n,4,4) or len(r['image_paths'])!=n:raise ValueError(f'Invalid episode array shapes: {key}')
         if len(ids)!=len(set(ids)) or not np.all(np.diff(ids)>0):raise ValueError(f'Invalid frame IDs: {key}')
@@ -76,7 +108,7 @@ class UnifiedDrivingDataset(Dataset):
     convention is proved. Offsets 0/1 are supervised label hypotheses; deployment
     must provide its own known command history and planned outgoing commands.
     """
-    def __init__(self,records,*,action_offsets,episode_ids=None,history=4,horizon=10,image_size=(224,224),exclude_uncertain_controls=True):
+    def __init__(self,records,*,action_offsets,episode_ids=None,history=4,horizon=10,image_size=(224,224),exclude_uncertain_controls=True,cameras=CAMERA_ORDER,require_calibration=False,image_crop=None):
         if any(isinstance(v,bool) or not isinstance(v,int) or v<1 for v in [history,horizon]):raise ValueError('Positive integer history/horizon required')
         if len(image_size)!=2 or any(not isinstance(v,int) or v<1 for v in image_size):raise ValueError('image_size=(width,height) must be positive')
         selected=list(records) if episode_ids is None else list(episode_ids)
@@ -88,13 +120,24 @@ class UnifiedDrivingDataset(Dataset):
             if isinstance(offset,bool) or not isinstance(offset,int) or offset not in (0,1):raise ValueError(f'Explicit H0/H1 offset required for {source}')
         self.history,self.horizon,self.image_size=history,horizon,tuple(image_size)
         self.exclude_uncertain_controls=bool(exclude_uncertain_controls)
-        self.samples=[]
+        self.cameras=camera_selection(cameras);self.require_calibration=bool(require_calibration)
+        if image_crop is not None and (len(image_crop)!=4 or any(not isinstance(v,int) or isinstance(v,bool) for v in image_crop)):raise ValueError('image_crop=(left,top,right,bottom) must contain integers')
+        self.image_crop=None if image_crop is None else tuple(image_crop)
+        self.samples=[];self.rejected_windows_missing_cameras=0;self.rejected_windows_missing_calibration=0
         for key,record in self.records.items():
             ids=record['frame_ids'];width=history+horizon
             nominal=nominal_controls(record['actions'])
+            if 'camera_paths' not in record:
+                record['camera_paths']={'rgb_front':record['image_paths']}
+            available=np.stack([np.array([p.is_file() for p in record['camera_paths'][c]],bool) if c in record['camera_paths'] else np.zeros(len(ids),bool) for c in self.cameras]).all(axis=0)
+            geo=record.get('camera_geometry')
+            calibration=geo['valid'][:,[CAMERA_ORDER.index(c) for c in self.cameras]].all(1) if geo is not None else np.zeros(len(ids),bool)
             for i in range(len(ids)-width+1):
-                if ids[i+width-1]-ids[i]==width-1 and (not self.exclude_uncertain_controls or nominal[i:i+width].all()):self.samples.append((key,i))
-        if not self.samples:raise ValueError('No contiguous matched windows')
+                if ids[i+width-1]-ids[i]!=width-1 or (self.exclude_uncertain_controls and not nominal[i:i+width].all()):continue
+                if not available[i:i+width].all():self.rejected_windows_missing_cameras+=1;continue
+                if self.require_calibration and not calibration[i:i+width].all():self.rejected_windows_missing_calibration+=1;continue
+                self.samples.append((key,i))
+        if not self.samples:raise ValueError(f'No contiguous matched windows (missing views: {self.rejected_windows_missing_cameras}, missing calibration: {self.rejected_windows_missing_calibration})')
 
     def __len__(self):return len(self.samples)
 
@@ -123,13 +166,36 @@ class UnifiedDrivingDataset(Dataset):
 
     def __getitem__(self,index):
         result=self.numeric_sample(index);key,start=self.samples[index]
-        images=[]
-        for path in self.records[key]['image_paths'][start:start+self.history+self.horizon]:
-            with Image.open(path) as image:
-                a=np.asarray(image.convert('RGB').resize(self.image_size),dtype=np.float32)/255
-                images.append(torch.from_numpy(a.transpose(2,0,1).copy()))
+        r=self.records[key];length=self.history+self.horizon;indices=[CAMERA_ORDER.index(c) for c in self.cameras]
+        images=[];raw_intrinsics=[];intrinsics=[];affines=[];original_sizes=[];poses=[];native=[];valid=[]
+        geometry=r.get('camera_geometry')
+        for i in range(start,start+length):
+            row=[];row_raw=[];row_k=[];row_a=[];row_size=[];row_pose=[];row_native=[];row_valid=[]
+            for c,j in zip(self.cameras,indices):
+                path=r['camera_paths'][c][i]
+                with Image.open(path) as image:
+                    size=image.size
+                    # Validate before PIL.crop (which would otherwise silently pad).
+                    _,_=resize_camera_intrinsics(np.eye(3),size,self.image_size,self.image_crop)
+                    rgb=image.convert('RGB')
+                    if self.image_crop is not None:rgb=rgb.crop(self.image_crop)
+                    a=np.asarray(rgb.resize(self.image_size,Image.Resampling.BICUBIC),dtype=np.float32)/255
+                row.append(torch.from_numpy(a.transpose(2,0,1).copy()));row_size.append(size)
+                gvalid=geometry is not None and bool(geometry['valid'][i,j])
+                K=geometry['intrinsics'][i,j] if gvalid else np.full((3,3),np.nan)
+                resized,affine=resize_camera_intrinsics(K,size,self.image_size,self.image_crop)
+                row_raw.append(K);row_k.append(resized);row_a.append(affine);row_valid.append(gvalid)
+                row_pose.append(geometry['camera_to_ego'][i,j] if gvalid else np.full((4,4),np.nan))
+                row_native.append(geometry['native_camera_to_ego'][i,j] if gvalid else np.full((4,4),np.nan))
+            images.append(torch.stack(row));raw_intrinsics.append(row_raw);intrinsics.append(row_k);affines.append(row_a);original_sizes.append(row_size);poses.append(row_pose);native.append(row_native);valid.append(row_valid)
         images=torch.stack(images)
         result['past_images']=images[:self.history];result['future_images']=images[self.history:]
+        result.update(camera_ids=self.cameras,camera_indices=torch.tensor(indices),camera_intrinsics=torch.tensor(np.array(intrinsics),dtype=torch.float32),
+            camera_intrinsics_original=torch.tensor(np.array(raw_intrinsics),dtype=torch.float32),
+            camera_to_ego=torch.tensor(np.array(poses),dtype=torch.float32),camera_native_to_ego=torch.tensor(np.array(native),dtype=torch.float32),
+            camera_geometry_valid=torch.tensor(valid),image_affine=torch.tensor(np.array(affines),dtype=torch.float32),
+            original_image_size=torch.tensor(original_sizes),camera_native_axes=r.get('camera_native_axes','unavailable'),
+            camera_geometry_frame='optical_camera_to_same_frame_ego_forward_right_up',camera_capture_timing_verified=False)
         return result
 
     def dynamics_arrays(self):
@@ -159,12 +225,12 @@ def nominal_controls(actions):
     return np.isfinite(actions).all(axis=-1)&(np.abs(actions[...,0])<=1)&(actions[...,1:]>=0).all(axis=-1)&(actions[...,1:]<=1).all(axis=-1)
 
 
-def load_training_datasets(project=PROJECT, *, require_images=True, image_size=(224,224)):
+def load_training_datasets(project=PROJECT, *, require_images=True, image_size=(224,224), cameras=CAMERA_ORDER, require_calibration=True, image_crop=None):
     """Load the frozen, quality-filtered train/validation/test views once."""
     project=Path(project)
     config=project/'data/config'
     splits=json.loads((config/'splits.json').read_text())['episodes']
     offsets=json.loads((config/'action_alignment.json').read_text())['action_offsets']
     records=load_episode_records(project,require_images=require_images)
-    return {part:UnifiedDrivingDataset(records,episode_ids=keys,action_offsets=offsets,image_size=image_size)
+    return {part:UnifiedDrivingDataset(records,episode_ids=keys,action_offsets=offsets,image_size=image_size,cameras=cameras,require_calibration=require_calibration,image_crop=image_crop)
             for part,keys in splits.items()}

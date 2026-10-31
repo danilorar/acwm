@@ -19,8 +19,8 @@ def main():
         assert len(ds)==count,(part,len(ds),count)
         samples=[next(i for i,(key,_) in enumerate(ds.samples) if ds.records[key]['source']==source) for source in ['bench2drive','person2drive']]
         batch=next(iter(DataLoader(Subset(ds,samples),batch_size=2,num_workers=0)))
-        assert batch['past_images'].shape==(2,4,3,224,224)
-        assert batch['future_images'].shape==(2,10,3,224,224)
+        assert batch['past_images'].shape==(2,4,6,3,224,224)
+        assert batch['future_images'].shape==(2,10,6,3,224,224)
         assert batch['past_actions'].shape==(2,3,3)
         assert batch['future_actions'].shape==(2,10,3)
         assert batch['future_motion_targets'].shape==(2,10,5)

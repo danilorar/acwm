@@ -30,9 +30,14 @@ from torch.utils.data import DataLoader
 from src.unified_driving_dataset import load_training_datasets
 
 datasets = load_training_datasets()
-loader = DataLoader(datasets['train'], batch_size=8, shuffle=True, num_workers=0)
+loader = DataLoader(datasets['train'], batch_size=2, shuffle=True, num_workers=0)
 batch = next(iter(loader))
 ```
+
+Default image shapes are `(B,4,6,3,224,224)` and `(B,10,6,3,224,224)`.
+Use `load_training_datasets(cameras=('rgb_front',))` for front-only data (camera
+axis size one). Intrinsics, extrinsics, camera IDs and validity masks accompany
+the images. See [the six-camera preparation report](docs/multicamera/README.md).
 
 Both sources are needed. Train/validation/test select disjoint episodes in the
 same physical folders; a folder name does not define the split.
@@ -45,7 +50,8 @@ The following commands use frozen manifests, never choose a different cohort.
 They are unnecessary on this machine, where the dataset is already prepared.
 Downloading requires substantial disk space; archive transfers happen only with
 explicit download flags. Sensor archives contain extra modalities, but only
-annotations/front RGB (Bench) and front RGB (Person) are extracted.
+annotations/front RGB first; the multi-camera step below then extracts exactly
+the six surrounding RGB views, preserving front files. No LiDAR/depth is extracted.
 
 ```bash
 python tools/download_bench2drive.py             # show frozen selection
@@ -53,6 +59,10 @@ python tools/download_bench2drive.py --download
 python tools/extract_bench2drive.py
 python tools/prepare_person2drive.py --metadata --index
 python tools/prepare_person2drive.py --download --extract
+python tools/prepare_multicamera.py              # audit and measure missing RGB
+python tools/prepare_multicamera.py --extract
+python tools/build_camera_geometry.py
+python tools/check_dataset.py
 ```
 
 ## Archived investigation

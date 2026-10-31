@@ -1,0 +1,4 @@
+split,front_windows,six_camera_windows,missing_view_windows,missing_calibration_windows
+train,95927,95927,0,0
+validation,25810,25810,0,0
+test,21694,21694,0,0

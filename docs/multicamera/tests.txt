@@ -1,0 +1,22 @@
+test_conflicting_front_never_overwritten (test_multicamera_preparation.SixCameraExtraction.test_conflicting_front_never_overwritten) ... ok
+test_missing_state_linked_view_not_published (test_multicamera_preparation.SixCameraExtraction.test_missing_state_linked_view_not_published) ... ok
+test_only_six_views_front_unchanged_and_resume (test_multicamera_preparation.SixCameraExtraction.test_only_six_views_front_unchanged_and_resume) ... ok
+test_front_only_and_idempotent_resume (test_person2drive_preparation.PersonExtraction.test_front_only_and_idempotent_resume) ... Extracted driver test 1 front RGB files
+ok
+test_missing_indexed_image_never_publishes_episode (test_person2drive_preparation.PersonExtraction.test_missing_indexed_image_never_publishes_episode) ... ok
+test_unsafe_member_never_publishes_episode (test_person2drive_preparation.PersonExtraction.test_unsafe_member_never_publishes_episode) ... ok
+test_axes_and_heading_both_handednesses (test_unified_driving_dataset.UnifiedContract.test_axes_and_heading_both_handednesses) ... ok
+test_both_offsets_and_source_independence (test_unified_driving_dataset.UnifiedContract.test_both_offsets_and_source_independence) ... ok
+test_calibration_filter_and_camera_geometry_batch (test_unified_driving_dataset.UnifiedContract.test_calibration_filter_and_camera_geometry_batch) ... ok
+test_camera_order_selection_and_missing_views (test_unified_driving_dataset.UnifiedContract.test_camera_order_selection_and_missing_views) ... ok
+test_explicit_alignment_required (test_unified_driving_dataset.UnifiedContract.test_explicit_alignment_required) ... ok
+test_gaps_and_batching (test_unified_driving_dataset.UnifiedContract.test_gaps_and_batching) ... ok
+test_no_privileged_future_leakage (test_unified_driving_dataset.UnifiedContract.test_no_privileged_future_leakage) ... ok
+test_resize_geometry_projects_identically (test_unified_driving_dataset.UnifiedContract.test_resize_geometry_projects_identically) ... ok
+test_source_optical_conversions (test_unified_driving_dataset.UnifiedContract.test_source_optical_conversions) ... ok
+test_uncertain_controls_are_preserved_but_default_windows_exclude_them (test_unified_driving_dataset.UnifiedContract.test_uncertain_controls_are_preserved_but_default_windows_exclude_them) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.793s
+
+OK

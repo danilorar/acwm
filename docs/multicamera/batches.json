@@ -1,0 +1,317 @@
+[
+  {
+    "split": "train",
+    "shapes": {
+      "past_ego_observations": [
+        2,
+        4,
+        1
+      ],
+      "past_actions": [
+        2,
+        3,
+        3
+      ],
+      "future_actions": [
+        2,
+        10,
+        3
+      ],
+      "future_motion_targets": [
+        2,
+        10,
+        5
+      ],
+      "start_frame": [
+        2
+      ],
+      "frame_ids": [
+        2,
+        14
+      ],
+      "action_offset": [
+        2
+      ],
+      "action_in_nominal_range": [
+        2,
+        14
+      ],
+      "past_images": [
+        2,
+        4,
+        6,
+        3,
+        224,
+        224
+      ],
+      "future_images": [
+        2,
+        10,
+        6,
+        3,
+        224,
+        224
+      ],
+      "camera_indices": [
+        2,
+        6
+      ],
+      "camera_intrinsics": [
+        2,
+        14,
+        6,
+        3,
+        3
+      ],
+      "camera_intrinsics_original": [
+        2,
+        14,
+        6,
+        3,
+        3
+      ],
+      "camera_to_ego": [
+        2,
+        14,
+        6,
+        4,
+        4
+      ],
+      "camera_native_to_ego": [
+        2,
+        14,
+        6,
+        4,
+        4
+      ],
+      "camera_geometry_valid": [
+        2,
+        14,
+        6
+      ],
+      "image_affine": [
+        2,
+        14,
+        6,
+        3,
+        3
+      ],
+      "original_image_size": [
+        2,
+        14,
+        6,
+        2
+      ]
+    }
+  },
+  {
+    "split": "validation",
+    "shapes": {
+      "past_ego_observations": [
+        2,
+        4,
+        1
+      ],
+      "past_actions": [
+        2,
+        3,
+        3
+      ],
+      "future_actions": [
+        2,
+        10,
+        3
+      ],
+      "future_motion_targets": [
+        2,
+        10,
+        5
+      ],
+      "start_frame": [
+        2
+      ],
+      "frame_ids": [
+        2,
+        14
+      ],
+      "action_offset": [
+        2
+      ],
+      "action_in_nominal_range": [
+        2,
+        14
+      ],
+      "past_images": [
+        2,
+        4,
+        6,
+        3,
+        224,
+        224
+      ],
+      "future_images": [
+        2,
+        10,
+        6,
+        3,
+        224,
+        224
+      ],
+      "camera_indices": [
+        2,
+        6
+      ],
+      "camera_intrinsics": [
+        2,
+        14,
+        6,
+        3,
+        3
+      ],
+      "camera_intrinsics_original": [
+        2,
+        14,
+        6,
+        3,
+        3
+      ],
+      "camera_to_ego": [
+        2,
+        14,
+        6,
+        4,
+        4
+      ],
+      "camera_native_to_ego": [
+        2,
+        14,
+        6,
+        4,
+        4
+      ],
+      "camera_geometry_valid": [
+        2,
+        14,
+        6
+      ],
+      "image_affine": [
+        2,
+        14,
+        6,
+        3,
+        3
+      ],
+      "original_image_size": [
+        2,
+        14,
+        6,
+        2
+      ]
+    }
+  },
+  {
+    "split": "test",
+    "shapes": {
+      "past_ego_observations": [
+        2,
+        4,
+        1
+      ],
+      "past_actions": [
+        2,
+        3,
+        3
+      ],
+      "future_actions": [
+        2,
+        10,
+        3
+      ],
+      "future_motion_targets": [
+        2,
+        10,
+        5
+      ],
+      "start_frame": [
+        2
+      ],
+      "frame_ids": [
+        2,
+        14
+      ],
+      "action_offset": [
+        2
+      ],
+      "action_in_nominal_range": [
+        2,
+        14
+      ],
+      "past_images": [
+        2,
+        4,
+        6,
+        3,
+        224,
+        224
+      ],
+      "future_images": [
+        2,
+        10,
+        6,
+        3,
+        224,
+        224
+      ],
+      "camera_indices": [
+        2,
+        6
+      ],
+      "camera_intrinsics": [
+        2,
+        14,
+        6,
+        3,
+        3
+      ],
+      "camera_intrinsics_original": [
+        2,
+        14,
+        6,
+        3,
+        3
+      ],
+      "camera_to_ego": [
+        2,
+        14,
+        6,
+        4,
+        4
+      ],
+      "camera_native_to_ego": [
+        2,
+        14,
+        6,
+        4,
+        4
+      ],
+      "camera_geometry_valid": [
+        2,
+        14,
+        6
+      ],
+      "image_affine": [
+        2,
+        14,
+        6,
+        3,
+        3
+      ],
+      "original_image_size": [
+        2,
+        14,
+        6,
+        2
+      ]
+    }
+  }
+]

@@ -80,9 +80,11 @@ requested. A final planning/MPC model needs intervention tests, authoritative
 applied-control timing/semantics, and stronger rare-control/full-stop evidence.
 Keep source conditioning and explicit source/maneuver sampling weights.
 
-Prepared corpus trees occupy about 89.85 GiB, including 67.77 GiB retained Person
+At the front-only checkpoint, prepared corpus trees occupied about 89.85 GiB, including 67.77 GiB retained Person
 archives, 10.37 GiB full-release metadata, 9.41 GiB front RGB and 2.27 GiB Bench.
-Only front RGB and required annotations were extracted. Archives are optional
+That checkpoint extracted only front RGB and required annotations. The current
+six-camera upgrade is documented in [the camera report](multicamera/README.md),
+including current storage, calibration, image counts and loading measurements. Archives are optional
 for loading but useful for recovery; no deletion was performed in this cleanup.
 
 Mini, exploratory samples, former outputs and the upstream checkout now live in

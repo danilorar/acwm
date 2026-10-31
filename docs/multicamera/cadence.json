@@ -1,0 +1,12 @@
+[
+  {
+    "source": "bench2drive",
+    "median_displacement_over_speed_seconds": 0.10007742223924503,
+    "note": "Kinematic cadence check, not capture timestamps or camera skew"
+  },
+  {
+    "source": "person2drive",
+    "median_displacement_over_speed_seconds": 0.10015050544953658,
+    "note": "Kinematic cadence check, not capture timestamps or camera skew"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "source_file_sha256": {
+    "data/archive/external_Bench2Drive/tools/data_collect.py": "be1d399100e20ba1809652beff5451a73af7c12a9d16bac00911dc1d9ac37b66",
+    "data/archive/external_Bench2Drive/leaderboard/leaderboard/envs/sensor_interface.py": "25bda2f0bc8c203ccbc2ab066d0a37e1d89c5d62a44a89ee8718c1aef096995d"
+  },
+  "selected_manifest_sha256": {
+    "verification.json": "87cfcec27de1860e8297cf0fac42d3a157143cef887df58004fb0737130c7fac",
+    "splits.json": "a9fdadbf3c21c02171c68babf4d73d90a933d6a486623324cd902f59c0c8a85c",
+    "action_alignment.json": "29d7ee8bc7185d663afe2ff6f411057fd13db2c0586ef5d8464c639fa74b599c",
+    "person_catalog.json": "33ec3fae229da7876fa5b48530985d1118b56a10766ee5df4da7b4dd05414e5c",
+    "bench_selection.json": "ff0f19f65fc763feffc1bfad0754e0bab02f955f3bcb8eaba4f968ce41408c54",
+    "bench_catalog.json": "106dc2bc7ca1534f10df618451bab29fb665355ef500759ede01bdfccc251265",
+    "person_selection.json": "d89ff502bb874aa9fa083ecac409314045c830e09d17e4990071b3a015b5454a"
+  },
+  "code_sha256": {
+    "src/unified_driving_dataset.py": "671fc69bfdb913e17add7306a1a42752b2955019fddf292eadaa70ed23accd98",
+    "tools/build_camera_geometry.py": "0070ab4111564779806c584a4aa6ce4785e651eb8c3aa1502866d8b0f06b912c",
+    "tools/prepare_multicamera.py": "84fbdb9cb2aa105f0f5304bd7cf6824123312252209d0f9f80e840a13a89d3ec",
+    "tools/validate_multicamera.py": "8e553b22268593c0bc68eceb32908e9245f1dd7edc67c17413ebe3ddf0b96736"
+  },
+  "environment": {
+    "numpy": "2.5.4",
+    "Pillow": "13.0.0",
+    "torch": "2.15.0+cpu"
+  }
+}

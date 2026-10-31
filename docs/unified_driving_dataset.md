@@ -29,11 +29,11 @@ coverage from unindexed RGB or fill missing labels from ordinal raw-log indices.
 
 | Output | Sample shape | Meaning |
 |---|---|---|
-| `past_images` | `(4,3,224,224)` | RGB float32 in [0,1], oldest first |
+| `past_images` | `(4,6,3,224,224)` | Six-view RGB float32 in [0,1], oldest first |
 | `past_ego_observations` | `(4,1)` | Recorded forward speed in m/s; no future/privileged poses |
 | `past_actions` | `(3,3)` | Controls for the three observed transitions |
 | `future_actions` | `(10,3)` | Candidate controls for the ten predicted transitions |
-| `future_images` | `(10,3,224,224)` | Future RGB supervision |
+| `future_images` | `(10,6,3,224,224)` | Future RGB supervision |
 | `future_motion_targets` | `(10,5)` | Speed, forward meters, right meters, sin(right yaw), cos(right yaw) |
 
 Batching prepends the batch dimension. `image_size` is PIL `(width,height)`.
@@ -111,3 +111,66 @@ models; it does not assert identical physical responses across the two sources.
 Person2Drive has more windows, so a future mixed-source training sampler should
 make its source weighting explicit. Speed-only observations intentionally omit
 gear, slope, tire/vehicle parameters and other possible hidden variables.
+
+## Six-camera RGB and geometry
+
+Six views are the default, in fixed order: `rgb_front`, `rgb_front_left`,
+`rgb_front_right`, `rgb_back`, `rgb_back_left`, `rgb_back_right`. Use `cameras=`
+to select a subset, which retains canonical order. Front-only output keeps the
+camera axis: `(4,1,3,H,W)` and `(10,1,3,H,W)`. Every required view must exist for
+all 14 observations; no frame/camera substitution is performed. Missing views
+reject windows; counters expose losses. The frozen cohort retains all 143,431
+windows after requiring six views. Numerical targets/actions are unchanged.
+
+```python
+from src.unified_driving_dataset import load_training_datasets
+six = load_training_datasets()  # requires calibration; all six views
+front = load_training_datasets(cameras=('rgb_front',))
+# Optional explicit crop, applied identically to every view, with updated K:
+cropped = load_training_datasets(image_crop=(160,90,1440,810))
+```
+
+For `L=history+horizon=14` and `C` selected views, samples also return:
+
+| Field | Shape | Meaning |
+| --- | --- | --- |
+| `camera_ids`, `camera_indices` | C | Directory identities and canonical 0..5 IDs |
+| `camera_intrinsics_original` | `(L,C,3,3)` | Original pinhole K |
+| `camera_intrinsics` | `(L,C,3,3)` | K after crop/resize |
+| `image_affine` | `(L,C,3,3)` | Original-pixel to processed-pixel mapping |
+| `original_image_size` | `(L,C,2)` | Actual decoded width,height |
+| `camera_to_ego` | `(L,C,4,4)` | Optical camera to same-observation forward/right/up ego |
+| `camera_native_to_ego` | `(L,C,4,4)` | Original source convention, labelled by camera_native_axes |
+| `camera_geometry_valid` | `(L,C)` | Calibration availability/validity |
+| `camera_capture_timing_verified` | scalar bool | False: capture clocks are not saved |
+
+Pixel coordinates use zero-based pixel centers. For crop offset left/top and
+resize scale sx/sy, `u' = sx*(u-left+0.5)-0.5`, likewise for v. The loader uses
+`K_processed = image_affine @ K_original`. Default preprocessing is bicubic
+resize only; explicit crop bounds are validated before PIL can pad. Original
+matrices and pixels are retained. No undistortion is performed.
+
+Bench raw world2cam is actor-camera forward/right/up; Person raw camera matrices
+are optical right/down/forward, and its native ego y is left-positive. They are
+converted independently to a common optical-camera to forward/right/up ego.
+That common ego convention is left-handed, so these coordinate transforms can
+have determinant -1; do not convert them to SO(3) quaternions without reconciling
+handedness. The six cameras do not share one K: rear FOV is wider. Camera mounts
+are relative to the body at each observation, not the anchored planar motion
+label frame. Raw world2cam is preserved on disk but is not returned as privileged
+future global pose input.
+
+Lossless calibration sidecars are in `data/<source>/manifests/cameras/`, derived
+from the original retained JSON/PKL calibration. `load_training_datasets()`
+requires valid geometry by default. Explicit `require_calibration=False` is an
+audit option: unavailable geometry returns invalid masks/NaNs, not invented
+identity matrices. Direct `UnifiedDrivingDataset` users must choose whether to
+require calibration.
+
+All views align to available metadata frame IDs, but native capture timestamps
+are unavailable. The reference Bench interface requests a common simulator
+frame; the original production/export caller and empirical camera timing skew
+are not certified. Do not interpret the timing-verification flag as true merely
+because camera_geometry_valid is true. See [the audit](multicamera/README.md)
+for per-episode frame statistics, calibration diagnostics, contact sheets,
+loading memory/time and remaining synchronization limits.

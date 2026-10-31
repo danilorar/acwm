@@ -1,0 +1,450 @@
+[
+  {
+    "batch_size": 1,
+    "cameras": 1,
+    "num_workers": 0,
+    "seconds": 0.18326442802208476,
+    "seconds_per_window": 0.18326442802208476,
+    "baseline_rss_bytes": 1502507008,
+    "peak_rss_bytes": 1511051264,
+    "incremental_peak_rss_bytes": 8544256,
+    "batch_tensor_bytes": 8433632,
+    "past_shape": [
+      1,
+      4,
+      1,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      1,
+      10,
+      1,
+      3,
+      224,
+      224
+    ],
+    "source": "bench2drive"
+  },
+  {
+    "batch_size": 2,
+    "cameras": 1,
+    "num_workers": 0,
+    "seconds": 0.33609085000352934,
+    "seconds_per_window": 0.16804542500176467,
+    "baseline_rss_bytes": 1502539776,
+    "peak_rss_bytes": 1511206912,
+    "incremental_peak_rss_bytes": 8667136,
+    "batch_tensor_bytes": 16867264,
+    "past_shape": [
+      2,
+      4,
+      1,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      2,
+      10,
+      1,
+      3,
+      224,
+      224
+    ],
+    "source": "bench2drive"
+  },
+  {
+    "batch_size": 4,
+    "cameras": 1,
+    "num_workers": 0,
+    "seconds": 0.6568594019918237,
+    "seconds_per_window": 0.16421485049795592,
+    "baseline_rss_bytes": 1502543872,
+    "peak_rss_bytes": 1516036096,
+    "incremental_peak_rss_bytes": 13492224,
+    "batch_tensor_bytes": 33734528,
+    "past_shape": [
+      4,
+      4,
+      1,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      4,
+      10,
+      1,
+      3,
+      224,
+      224
+    ],
+    "source": "bench2drive"
+  },
+  {
+    "batch_size": 8,
+    "cameras": 1,
+    "num_workers": 0,
+    "seconds": 1.309056215977762,
+    "seconds_per_window": 0.16363202699722024,
+    "baseline_rss_bytes": 1502539776,
+    "peak_rss_bytes": 1583489024,
+    "incremental_peak_rss_bytes": 80949248,
+    "batch_tensor_bytes": 67469056,
+    "past_shape": [
+      8,
+      4,
+      1,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      8,
+      10,
+      1,
+      3,
+      224,
+      224
+    ],
+    "source": "bench2drive"
+  },
+  {
+    "batch_size": 1,
+    "cameras": 6,
+    "num_workers": 0,
+    "seconds": 0.9893681189860217,
+    "seconds_per_window": 0.9893681189860217,
+    "baseline_rss_bytes": 1502543872,
+    "peak_rss_bytes": 1595355136,
+    "incremental_peak_rss_bytes": 92811264,
+    "batch_tensor_bytes": 50599222,
+    "past_shape": [
+      1,
+      4,
+      6,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      1,
+      10,
+      6,
+      3,
+      224,
+      224
+    ],
+    "source": "bench2drive"
+  },
+  {
+    "batch_size": 2,
+    "cameras": 6,
+    "num_workers": 0,
+    "seconds": 1.916231230017729,
+    "seconds_per_window": 0.9581156150088646,
+    "baseline_rss_bytes": 1502547968,
+    "peak_rss_bytes": 1691693056,
+    "incremental_peak_rss_bytes": 189145088,
+    "batch_tensor_bytes": 101198444,
+    "past_shape": [
+      2,
+      4,
+      6,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      2,
+      10,
+      6,
+      3,
+      224,
+      224
+    ],
+    "source": "bench2drive"
+  },
+  {
+    "batch_size": 4,
+    "cameras": 6,
+    "num_workers": 0,
+    "seconds": 3.742930594016798,
+    "seconds_per_window": 0.9357326485041995,
+    "baseline_rss_bytes": 1502556160,
+    "peak_rss_bytes": 1905815552,
+    "incremental_peak_rss_bytes": 403259392,
+    "batch_tensor_bytes": 202396888,
+    "past_shape": [
+      4,
+      4,
+      6,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      4,
+      10,
+      6,
+      3,
+      224,
+      224
+    ],
+    "source": "bench2drive"
+  },
+  {
+    "batch_size": 8,
+    "cameras": 6,
+    "num_workers": 0,
+    "seconds": 7.511221007007407,
+    "seconds_per_window": 0.9389026258759259,
+    "baseline_rss_bytes": 1502552064,
+    "peak_rss_bytes": 2309976064,
+    "incremental_peak_rss_bytes": 807424000,
+    "batch_tensor_bytes": 404793776,
+    "past_shape": [
+      8,
+      4,
+      6,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      8,
+      10,
+      6,
+      3,
+      224,
+      224
+    ],
+    "source": "bench2drive"
+  },
+  {
+    "batch_size": 1,
+    "cameras": 1,
+    "num_workers": 0,
+    "seconds": 0.18058940299670212,
+    "seconds_per_window": 0.18058940299670212,
+    "baseline_rss_bytes": 1507631104,
+    "peak_rss_bytes": 1516298240,
+    "incremental_peak_rss_bytes": 8667136,
+    "batch_tensor_bytes": 8433632,
+    "past_shape": [
+      1,
+      4,
+      1,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      1,
+      10,
+      1,
+      3,
+      224,
+      224
+    ],
+    "source": "person2drive"
+  },
+  {
+    "batch_size": 2,
+    "cameras": 1,
+    "num_workers": 0,
+    "seconds": 0.3460844729852397,
+    "seconds_per_window": 0.17304223649261985,
+    "baseline_rss_bytes": 1507639296,
+    "peak_rss_bytes": 1516310528,
+    "incremental_peak_rss_bytes": 8671232,
+    "batch_tensor_bytes": 16867264,
+    "past_shape": [
+      2,
+      4,
+      1,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      2,
+      10,
+      1,
+      3,
+      224,
+      224
+    ],
+    "source": "person2drive"
+  },
+  {
+    "batch_size": 4,
+    "cameras": 1,
+    "num_workers": 0,
+    "seconds": 0.664662422001129,
+    "seconds_per_window": 0.16616560550028225,
+    "baseline_rss_bytes": 1507639296,
+    "peak_rss_bytes": 1521135616,
+    "incremental_peak_rss_bytes": 13496320,
+    "batch_tensor_bytes": 33734528,
+    "past_shape": [
+      4,
+      4,
+      1,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      4,
+      10,
+      1,
+      3,
+      224,
+      224
+    ],
+    "source": "person2drive"
+  },
+  {
+    "batch_size": 8,
+    "cameras": 1,
+    "num_workers": 0,
+    "seconds": 1.3443989899824373,
+    "seconds_per_window": 0.16804987374780467,
+    "baseline_rss_bytes": 1507643392,
+    "peak_rss_bytes": 1588563968,
+    "incremental_peak_rss_bytes": 80920576,
+    "batch_tensor_bytes": 67469056,
+    "past_shape": [
+      8,
+      4,
+      1,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      8,
+      10,
+      1,
+      3,
+      224,
+      224
+    ],
+    "source": "person2drive"
+  },
+  {
+    "batch_size": 1,
+    "cameras": 6,
+    "num_workers": 0,
+    "seconds": 1.0127819469780661,
+    "seconds_per_window": 1.0127819469780661,
+    "baseline_rss_bytes": 1507647488,
+    "peak_rss_bytes": 1596792832,
+    "incremental_peak_rss_bytes": 89145344,
+    "batch_tensor_bytes": 50599222,
+    "past_shape": [
+      1,
+      4,
+      6,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      1,
+      10,
+      6,
+      3,
+      224,
+      224
+    ],
+    "source": "person2drive"
+  },
+  {
+    "batch_size": 2,
+    "cameras": 6,
+    "num_workers": 0,
+    "seconds": 1.9563683650048915,
+    "seconds_per_window": 0.9781841825024458,
+    "baseline_rss_bytes": 1507651584,
+    "peak_rss_bytes": 1679769600,
+    "incremental_peak_rss_bytes": 172118016,
+    "batch_tensor_bytes": 101198444,
+    "past_shape": [
+      2,
+      4,
+      6,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      2,
+      10,
+      6,
+      3,
+      224,
+      224
+    ],
+    "source": "person2drive"
+  },
+  {
+    "batch_size": 4,
+    "cameras": 6,
+    "num_workers": 0,
+    "seconds": 3.8721174850070383,
+    "seconds_per_window": 0.9680293712517596,
+    "baseline_rss_bytes": 1507647488,
+    "peak_rss_bytes": 1916342272,
+    "incremental_peak_rss_bytes": 408694784,
+    "batch_tensor_bytes": 202396888,
+    "past_shape": [
+      4,
+      4,
+      6,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      4,
+      10,
+      6,
+      3,
+      224,
+      224
+    ],
+    "source": "person2drive"
+  },
+  {
+    "batch_size": 8,
+    "cameras": 6,
+    "num_workers": 0,
+    "seconds": 7.6832817399990745,
+    "seconds_per_window": 0.9604102174998843,
+    "baseline_rss_bytes": 1507651584,
+    "peak_rss_bytes": 2321854464,
+    "incremental_peak_rss_bytes": 814202880,
+    "batch_tensor_bytes": 404793776,
+    "past_shape": [
+      8,
+      4,
+      6,
+      3,
+      224,
+      224
+    ],
+    "future_shape": [
+      8,
+      10,
+      6,
+      3,
+      224,
+      224
+    ],
+    "source": "person2drive"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "numeric_fingerprint": "0bef779fd303307d343f6f73e635883cc62d0083178568cec20d41f66c7dbd3e",
+  "split_integrity": true,
+  "person_driver_disjoint": true,
+  "bench_route_disjoint": true,
+  "camera_order": [
+    "rgb_front",
+    "rgb_front_left",
+    "rgb_front_right",
+    "rgb_back",
+    "rgb_back_left",
+    "rgb_back_right"
+  ],
+  "counts": [
+    {
+      "split": "train",
+      "front_windows": 95927,
+      "six_camera_windows": 95927,
+      "missing_view_windows": 0,
+      "missing_calibration_windows": 0
+    },
+    {
+      "split": "validation",
+      "front_windows": 25810,
+      "six_camera_windows": 25810,
+      "missing_view_windows": 0,
+      "missing_calibration_windows": 0
+    },
+    {
+      "split": "test",
+      "front_windows": 21694,
+      "six_camera_windows": 21694,
+      "missing_view_windows": 0,
+      "missing_calibration_windows": 0
+    }
+  ],
+  "action_offsets": {
+    "bench2drive": 1,
+    "person2drive": 0
+  },
+  "no_training_or_features": true
+}
