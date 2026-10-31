@@ -73,21 +73,59 @@ application are missing. A 10-Hz recording rate does not prove commands were
 held for the full 0.1-second transition. Predictive usefulness is not proof of
 collection-time alignment or counterfactual/intervention validity.
 
-## Readiness and storage
+## Six-camera milestone and encoder readiness
+
+Complete six-camera analysis: tag `dataset-six-camera-v1`, branch
+`archive/dataset-analysis`. The earlier front-only experiments remain at
+`dataset-foundation-v1`. Read reports with git show or in a separate worktree;
+main contains only the runtime adapter, focused tests and a smoke checker.
+
+All 132 Bench routes and 80 Person episodes provide the six requested cameras:
+front, front-left, front-right, rear, rear-left, rear-right. The 1,243,416 stored
+RGB images are 1600×900 JPEGs, with zero missing state-linked camera IDs and
+matching per-view raw frame sets. There are 919,848 metadata-linked images;
+additional unindexed Person RGB remains available but is not in the frozen
+supervised cohort. All 143,431 windows survive six-camera requirements.
+
+Intrinsics/extrinsics are retained in lossless calibration sidecars; returned
+geometry reflects resize/crop. Bench native camera transforms are actor axes,
+Person native camera transforms are optical axes with left-positive ego y.
+After explicit conversion, measured median intrinsics match and normalized
+mount matrices agree within about 6e-6. The common forward/right/up body frame
+is left-handed. The rear camera has a wider FOV than the other five.
+Frame references/calibration are consistent, but native capture timestamps are
+absent, so actual cross-camera skew is unknown. Do not equate geometry validity
+or matching filenames with a certified capture clock.
+
+Six-view CPU decode/resize/collation took about 1 second per K4/H10 window.
+Batch eight took 7.5–7.7 seconds with ~386 MiB tensor payload and ~2.2 GiB process
+RSS (including ~1.4 GiB of loaded records). Full measurements, contact sheets,
+per-episode inventories and calibration diagnostics are in the archived report:
+
+```bash
+git show dataset-six-camera-v1:docs/multicamera/README.md
+```
 
 Proceed with DINOv3 features and an observational visual-model prototype when
-requested. A final planning/MPC model needs intervention tests, authoritative
-applied-control timing/semantics, and stronger rare-control/full-stop evidence.
-Keep source conditioning and explicit source/maneuver sampling weights.
+requested. A final planning/MPC model still needs intervention tests,
+authoritative applied-command semantics/timing, and better rare-control and
+human full-stop evidence. Preserve source conditioning and explicit sampling
+weights. No visual encoder, feature cache, Transformer or RSSM has started.
 
-At the front-only checkpoint, prepared corpus trees occupied about 89.85 GiB, including 67.77 GiB retained Person
-archives, 10.37 GiB full-release metadata, 9.41 GiB front RGB and 2.27 GiB Bench.
-That checkpoint extracted only front RGB and required annotations. The current
-six-camera upgrade is documented in [the camera report](multicamera/README.md),
-including current storage, calibration, image counts and loading measurements. Archives are optional
-for loading but useful for recovery; no deletion was performed in this cleanup.
+## Completed cleanup
 
-Mini, exploratory samples, former outputs and the upstream checkout now live in
-ignored data/archive/. They are NOT training inputs and are NOT stored by the
-Git tag. Historical scripts/results are stored by Git. No visual encoder,
-DINOv3 cache, Transformer or RSSM training has started.
+The six-camera checkpoint was pushed before deleting raw archives, Mini,
+exploratory samples, old outputs/upstream checkout, metadata for 35 unselected
+Person drivers, unused episode indexes and preparation-completion bookkeeping.
+All extracted RGB (including unindexed frames), all Bench annotations, 80 Person
+state indexes, 212 calibration sidecars and original metadata for the 15 selected
+Person drivers were preserved. Runtime numerical data, splits and action-offset
+choices are unchanged.
+
+Cleanup reclaimed approximately **128.38 GiB**, leaving approximately
+**287.80 GiB free** on this machine. Prepared data now occupy about
+**77.27 GiB**. Removed archives could only be recovered by
+re-downloading the archived pinned sources; they are not stored in Git. The
+analysis branch preserves a deletion ledger in docs/cleanup.json. Main removes
+preparation scripts/heavy reports/catalogs and keeps this summary plus the
+runtime field contract. Minimal runtime dependencies are numpy, Pillow and torch.

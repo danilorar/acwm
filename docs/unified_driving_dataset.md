@@ -89,8 +89,8 @@ original human recording/rendering/metadata-export caller is also unavailable.
 Evaluation-agent execution order and predictive error cannot substitute for
 these missing collection-time callers. Ten Hz is the observation frequency;
 it does not establish that each recorded command was held for the entire next
-0.1-second transition. Candidate plans use a 10-Hz discretization assumption. See docs/dataset_foundation.md and the archived
-experiments/dataset_foundation/results/source_checks.json at dataset-foundation-v1.
+0.1-second transition. Candidate plans use a 10-Hz discretization assumption. See docs/dataset_foundation.md and the archived source_checks.json at
+dataset-foundation-v1.
 
 ## Splits and normalization
 
@@ -171,6 +171,17 @@ All views align to available metadata frame IDs, but native capture timestamps
 are unavailable. The reference Bench interface requests a common simulator
 frame; the original production/export caller and empirical camera timing skew
 are not certified. Do not interpret the timing-verification flag as true merely
-because camera_geometry_valid is true. See [the audit](multicamera/README.md)
+because camera_geometry_valid is true. See [the archived audit](https://github.com/danilorar/acwm/blob/dataset-six-camera-v1/docs/multicamera/README.md)
 for per-episode frame statistics, calibration diagnostics, contact sheets,
 loading memory/time and remaining synchronization limits.
+
+## Runtime-only main branch
+
+Main intentionally keeps only this adapter, its focused tests and
+`tools/check_dataset.py`. Raw PKL readers, archive download/extraction tools,
+calibration generation and analysis benchmarks are available at
+`dataset-six-camera-v1`; they are not required to load the prepared data.
+Do not rerun preparation to start encoder work. Preserve the extracted RGB,
+Bench annotations, selected Person NPZ indexes and both calibration directories.
+Original metadata for the selected Person drivers is retained as a recovery and
+supervision reference; the loader does not parse those PKLs.

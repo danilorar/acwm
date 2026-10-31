@@ -112,13 +112,6 @@ class UnifiedContract(unittest.TestCase):
         rejected=UnifiedDrivingDataset({'p':r},action_offsets={'person2drive':1},horizon=2,require_calibration=True)
         self.assertEqual(len(rejected),2);self.assertEqual(rejected.rejected_windows_missing_calibration,1)
 
-    def test_source_optical_conversions(self):
-        from tools.build_camera_geometry import ACTOR_TO_OPTICAL,LEFT_TO_RIGHT
-        bench_camera_to_body=np.linalg.inv(ACTOR_TO_OPTICAL)
-        person_camera_to_native=np.array([[0,0,1,0],[-1,0,0,0],[0,-1,0,0],[0,0,0,1]],float)
-        np.testing.assert_array_equal(bench_camera_to_body,LEFT_TO_RIGHT@person_camera_to_native)
-        np.testing.assert_array_equal(bench_camera_to_body@np.array([1,0,0,0]),[0,1,0,0])
-
     def test_explicit_alignment_required(self):
         r=self.record('person2drive',-1)
         with self.assertRaises(ValueError):UnifiedDrivingDataset({'p':r},action_offsets={},horizon=2)
