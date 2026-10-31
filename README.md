@@ -1,7 +1,21 @@
-# Think Before Act
+# ACWM dataset-analysis archive
 
-Action-conditioned visual world model. Dataset preparation and diagnostics are
-complete; visual feature extraction and world-model training have not started.
+This branch is the reproducible dataset-analysis/preparation workspace, not the
+visual-model development branch. Six-camera preparation, source audits,
+calibration, contact sheets, performance measurements and restoration tools are
+preserved here. The frozen six-camera checkpoint is `dataset-six-camera-v1`.
+
+- Latest audit: [six-camera report](docs/multicamera/README.md).
+- Earlier front-only experiments: tag `dataset-foundation-v1`, including its
+  original `experiments/` tree. Use that tag to rerun the historical layout;
+  those files are not duplicated into this newer workspace.
+- Model development: `main`, with only the prepared-data runtime and context.
+
+Large ignored datasets are not backed up by Git. Cleanup on main may remove raw
+archives, Mini/exploratory backups and unselected metadata from the shared disk.
+The preparation recipes and pinned source manifests below restore missing raw
+sources when needed. Existing extracted six-camera training data are retained.
+No visual feature extraction or world-model training has started.
 
 ```text
 data/                   # local datasets; only config/ is tracked
